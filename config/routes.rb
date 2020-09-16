@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  # 顧客側のルーティング
   root to: 'homes#top'
   get '/about' => 'homes#about'
   devise_for :members, controllers: {
@@ -24,6 +26,7 @@ Rails.application.routes.draw do
   }
 
   get '/admin' => 'admins#top'
+
   namespace :admins do
   resources :orders ,only: [:index, :show, :update]
   resources :order_products ,only:[:update]
