@@ -17,10 +17,10 @@ Rails.application.routes.draw do
   namespace :admins do
   resources :orders ,only: [:index, :show, :update]
   resources :order_products ,only:[:update]
-  resources :genres ,only:[:index, :edit, :upate, :update]
+  resources :genres ,only:[:index, :edit, :create, :update]
   resources :members ,only:[:index, :show, :edit, :update]
-  resources :genres ,only:[:index, :edit, :upate, :create]
-  resources :products ,only:[:index, :edit, :upate, :create, :new, :show]
+  resources :genres ,only:[:index, :edit, :update, :create]
+  resources :products ,only:[:index, :edit, :update, :create, :new, :show]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
