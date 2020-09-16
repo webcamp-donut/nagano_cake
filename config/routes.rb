@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  # 顧客側のルーティング
   root to: 'homes#top'
   get '/about' => 'homes#about'
   devise_for :members
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
   get '/orders/confirmation' => 'orders#confirmation'
   get '/orders/thank' => 'orders#thank'
 
+  # 管理者のルーティング
   devise_for :admins
   namespace :admins do
   resources :orders ,only: [:index, :show, :update]
