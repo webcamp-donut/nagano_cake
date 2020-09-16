@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_16_114109) do
+
+ActiveRecord::Schema.define(version: 2020_09_16_112629) do
+
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_09_16_114109) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
+  
   create_table "members", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -39,10 +41,11 @@ ActiveRecord::Schema.define(version: 2020_09_16_114109) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "last_name"
+
     t.index ["email"], name: "index_members_on_email", unique: true
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
   end
+
 
   create_table "products", force: :cascade do |t|
     t.integer "genre_id"
@@ -51,6 +54,27 @@ ActiveRecord::Schema.define(version: 2020_09_16_114109) do
     t.integer "tax_excluded_price"
     t.string "image_id"
     t.integer "sale_status"
+
+  create_table "order_products", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "order_id"
+    t.integer "tax_included_price"
+    t.integer "quantity"
+    t.integer "production_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "member_id"
+    t.string "name"
+    t.string "address"
+    t.string "postal_code"
+    t.integer "payment"
+    t.integer "order_status"
+    t.integer "delivery_fee"
+    t.integer "total_fee"
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
