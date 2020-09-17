@@ -1,0 +1,32 @@
+<h1>配送先登録/一覧</h1>
+<%= form_for @shipping_address do |f| %>
+	<%= f.label :postal_code, "郵便番号（ハイフンなし）" %>
+	<%= f.text_field :postal_code %><br>
+	<%= f.label :address, "住所" %>
+	<%= f.text_field :address %><br>
+	<%= f.label :name, "宛名" %>
+	<%= f.text_field :name %><br>
+	<%= f.submit "登録する" %>
+<% end %>
+
+<table>
+	<thead>
+		<tr>
+			<th>郵便番号</th>
+			<th>住所</th>
+			<th>宛名</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @shipping_addresses.each do |shipping_address|  %>
+			<tr>
+				<td><%= shipping_address.postal_code %></td>
+				<td><%= shipping_address.address %></td>
+				<td><%= shipping_address.name %></td>
+				<td><%= link_to "編集する", edit_shipping_address_path(shipping_address, remote: true) %>
+					<%= link_to "削除する", shipping_address_path(shipping_address), method: :delete, remote: true %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
