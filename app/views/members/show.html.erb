@@ -1,0 +1,37 @@
+<h3>マイページ</h3>
+<h4>登録情報</h4>
+<%= link_to '編集する', edit_members_path %>
+<%= link_to 'パスワードを変更する', edit_members_path%>
+<table>
+<tr>
+<td>氏名</td>
+<td><%= @member.last_name %> <%= @member.first_name %></td>
+</tr>
+<tr>
+<td>カナ</td>
+<td><%= @member.kana_last_name%> <%= @member.kana_first_name%></td>
+</tr>
+<tr>
+<td>郵便番号</td>
+<td><%= @member.postal_code %></td>
+</tr>
+<tr>
+<td>住所</td>
+<td><%= @member.address %></td>
+</tr>
+<tr>
+<td>電話番号</td>
+<td><%= @member.phone %></td>
+</tr>
+<tr>
+<td>メールアドレス</td>
+<td><%= @member.email %></td>
+</tr>
+</table>
+
+
+<li><%= link_to ' log out', destroy_member_session_path, method: :delete %></li>
+<p>注文履歴</p>
+<h4>配送先 <%=link_to '一覧を見る', shipping_addresses_path %></h4>
+
+<h4>注文一覧</h4>
