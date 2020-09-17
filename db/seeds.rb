@@ -19,9 +19,23 @@
 #      last_name: 'takashi',
 #      )
 
-# Product.create!(
-#     genre_id: '1',
-#     name: 'cake',
-#     explanation: 'aaa',
-#     tax_excluded_price: '1000'
-#     )
+Product.create!(
+    genre_id: '1',
+    name: 'ショートケーキ',
+    explanation: '美味しい',
+    tax_excluded_price: '1000'
+    )
+
+Product.create!(
+    genre_id: '2',
+    name: 'モンブラン',
+    explanation: '美味しい',
+    tax_excluded_price: '1200'
+    )
+
+Product.create!(
+    genre_id: '3',
+    name: 'エクレア',
+    explanation: '美味しい',
+    tax_excluded_price: '1400'
+    )
