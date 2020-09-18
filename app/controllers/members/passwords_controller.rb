@@ -2,9 +2,9 @@
 
 class Members::PasswordsController < Devise::PasswordsController
   # GET /resource/password/new
-  # def new
+   def new
   #   super
-  # end
+   end
 
   # POST /resource/password
   # def create

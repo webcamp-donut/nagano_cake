@@ -8,9 +8,11 @@ Rails.application.routes.draw do
     passwords:     'members/passwords',
     registrations: 'members/registrations'
   }
-  resource :members, only: [:show,  :edit, :update]
+  resource :members, only: [:show]
+  get '/member/edit' => 'members#edit'
+  patch '/member/' => 'members#update'
   get  '/members/confirmation' => 'members#confirmation'
-  post '/members/withdraw' => 'members#withdraw'
+  patch '/members/withdraw' => 'members#withdraw'
   resources :products ,only: [:index, :show]
   resources :cart_items,only: [:index, :create, :destroy, :update]
   delete '/cart_items/' => 'cart_items#reset'
