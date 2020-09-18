@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
   # 顧客側のルーティング
-  root to: 'homes#top'
-  get '/about' => 'homes#about'
+
   devise_for :members, controllers: {
     sessions:      'members/sessions',
     passwords:     'members/passwords',
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
   delete '/cart_items/' => 'cart_items#reset'
   resources :shipping_addresses ,only: [:index, :new, :create, :edit, :update, :destroy]
   resources :orders,only: [:index, :new, :create, :show,]
-  get '/orders/confirmation' => 'orders#confirmation'
+  post '/orders/confirmation' => 'orders#confirmation'
   get '/orders/thank' => 'orders#thank'
 
   devise_for :admins, controllers: {
@@ -36,6 +35,7 @@ Rails.application.routes.draw do
   resources :products ,only:[:index, :edit, :update, :create, :new, :show]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+ root to: 'homes#top'
+  get '/about' => 'homes#about'
 
 end
