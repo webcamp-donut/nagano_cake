@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
 
   def new
   	@order = Order.new
-  	@registerd_address = current_member.shipping_address.all
+    @shipping_addresses = current_member.shipping_addresses.all
   end
 
   def show
@@ -12,34 +12,22 @@ class OrdersController < ApplicationController
   end
 
   def confirmation
+    # @orders = Order.new(order_params)
+
   	@payment = params[:payment]
   	@select_address = params[:select_address]
   	if @select_address = "member_address"
-  		@select_address = "東京都"
+  		@select_address = current_member.postal_code + current_member.address + "\n" + current_member.last_name + current_member.first_name
   	elsif @select_address = "registerd_address"
-  		@select_address = "千葉県"
+  		@select_address = @shipping_address.full_address
   	else
-  		@select_address = "埼玉県"
+  		@select_address = "#{order.postal_code} #{order.address}  \r #{order.name}"
   	end
-  	# @order = Order.new(order_params)
-  	#  if select_address == :new_address
-	  #   @pay = "pay"
-	  # elsif payment == :member_address
-	  #   @pay = "bank"
-	  # else
-	  # 	@pay = "no"
-	  # end
-
   end
 
-  def check_payment(payment)
-	  if select_address == :new_address
-	    @pay = "pay"
-	  elsif payment == :member_address
-	    @pay = "bank"
-	  else
-	  	@pay = "no"
-	  end
+  def create
+  end
+
 	end
 
 private

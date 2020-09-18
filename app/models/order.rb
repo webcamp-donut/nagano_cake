@@ -1,6 +1,10 @@
 class Order < ApplicationRecord
 
-	enum payment: [:card, :bank]
+	belongs_to :member
+
+	enum payment: [:クレジットカード, :銀行振込]
 
 	enum adress: [:member_address, :registerd_address, :new_address ]
+
+
 end

@@ -1,2 +1,38 @@
-<%= @payment %>
-<%= @select_address %>
+<h1>注文情報確認</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>商品名</th>
+			<th>単価（税込）</th>
+			<th>数量</th>
+			<th>小計</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>data</td>
+			<td>data</td>
+			<td>data</td>
+			<td>data</td>
+		</tr>
+	</tbody>
+</table>
+
+<table>
+		<tr><th>送料</th>
+			<td>data</td>
+		</tr>
+		<tr><th>商品合計</th>
+			<td>data</td>
+		</tr>
+		<tr><th>請求金額</th>
+			<td>data</td>
+		</tr>
+</table>
+
+<h1>支払い方法: <%= @payment %></h1>
+
+<h1>お届け先: <%= @select_address %></h1>
+
+<%= link_to "購入を確定する", orders_thank_path %>
