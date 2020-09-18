@@ -1,0 +1,14 @@
+
+<p><%= attachment_image_tag(@product, :image, :fill,200,200, fallback: "no_image.jpg", size:'200x200') %></p>
+<p>商品名<%= @product.name %></p>
+<p>商品説明<%= @product.explanation %></p>
+<p>¥<%= @tax_in_price %>(税込)</p>
+<select>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+</select>
+
+<p>カートに入れる<p>
