@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ .nav navbar-nav {
+     padding: auto auto;
+ }
+ .h2 {
+     padding: auto 50px auto 20px;
+ }
+ .admin_mail {
+     margin: auto 30px;
+ }
+ .admin_password {
+     margin: auto 57px;
+ }
+ .actions {
+     padding-top: 40px;
+     margin: auto 100px;
+ }
