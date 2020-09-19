@@ -16,9 +16,10 @@ Rails.application.routes.draw do
   resources :cart_items,only: [:index, :create, :destroy, :update]
   delete '/cart_items/' => 'cart_items#reset'
   resources :shipping_addresses ,only: [:index, :new, :create, :edit, :update, :destroy]
-  resources :orders,only: [:index, :new, :create, :show,]
   post '/orders/confirmation' => 'orders#confirmation'
   get '/orders/thank' => 'orders#thank'
+  resources :orders,only: [:index, :new, :create, :show]
+
 
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
