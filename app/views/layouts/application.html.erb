@@ -10,6 +10,81 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="conteiner">
+        <nav class="nav navber-nav navbar-left">
+          <span class="title">ロゴ</span>
+        </nav>
+        <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <% if admin_signed_in? %>
+            <li>
+              <%= link_to '', admins_products_path %>
+              <button type="button" class="btn btn-secondary">商品一覧</button>
+            </li>
+            <li>
+              <%= link_to '', admins_member_path %>
+              <button type="button" class="btn btn-secondary">会員一覧</button>
+            </li>
+            <li>
+              <%= link_to '', admins_orders_path %>
+              <button type="button" class="btn btn-secondary">注文履歴一覧</button>
+            </li>
+            <li>
+              <%= link_to '', admins_genres_path %>
+              <button type="button" class="btn btn-secondary">ジャンル一覧</button>
+            </li>
+            <li>
+              <%= link_to '', destroy_admin_session_path, method: :delete %>
+              <button type="button" class="btn btn-secondary">ログアウト</button>
+            </li>
+          <% elsif member_signed_in? %>
+            <li>
+              <%= link_to '', members_path %>
+              <button type="button" class="btn btn-secondary">マイページ</button>
+            </li>
+            <li>
+              <%= link_to '', products_path %>
+              <button type="button" class="btn btn-secondary">商品一覧</button>
+            </li>
+            <li>
+              <%= link_to '', cart_items_path %>
+              <button type="button" class="btn btn-secondary">カート</button>
+            </li>
+            <li>
+              <%= link_to '', destroy_member_session_path, method: :delete %>
+              <button type="button" class="btn btn-secondary">ログアウト</button>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to '', root_path %>
+              <button type="button" class="btn btn-secondary">About</button>
+              
+            </li>
+            <li>
+              <%= link_to '', products_path %>
+              <button type="button" class="btn btn-secondary">商品一覧</button>
+            </li>
+            <li>
+              <%= link_to '', new_member_registration_path %>
+              <button type="button" class="btn btn-secondary">新規登録</button>
+            </li>
+            <li>
+              <%= link_to '', new_member_session_path %>
+              <button type="button" class="btn btn-secondary">ログイン</button>
+            </li>
+          <% end %>
+        </ul>
+        </nav>
+      </div>
+    </header>
+    <body>
+      <div class="container" style="margin-top: 51px">
+       <div class="row">
+          <%= yield %>
+       </div>
+      </div>
+    </body>
   </body>
 </html>
