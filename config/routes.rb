@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :members, controllers: {
     sessions:      'members/sessions',
     passwords:     'members/passwords',
+    registrations: 's/registrations'
   }
   get '/member/' => 'members#show'
   get '/member/edit' => 'members#edit'
