@@ -41,7 +41,7 @@
             </li>
           <% elsif member_signed_in? %>
             <li>
-              <%= link_to '', members_path %>
+              <%= link_to '', member_path %>
               <button type="button" class="btn btn-secondary">マイページ</button>
             </li>
             <li>
@@ -60,7 +60,7 @@
             <li>
               <%= link_to '', root_path %>
               <button type="button" class="btn btn-secondary">About</button>
-              
+
             </li>
             <li>
               <%= link_to '', products_path %>

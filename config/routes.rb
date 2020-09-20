@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     passwords:     'members/passwords',
     registrations: 'members/registrations'
   }
-  resource :members, only: [:show]
+  get '/member/' => 'members#show'
   get '/member/edit' => 'members#edit'
   patch '/member/' => 'members#update'
   get  '/members/confirmation' => 'members#confirmation'

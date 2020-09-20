@@ -1,8 +1,17 @@
-    <h2>登録情報編集</h2>
+<h1>Admins::Members#edit</h1>
+<p>Find me in app/views/admins/members/edit.html.erb</p>
+ <h3>
+    <%= @member.last_name %>
+    <%= @member.first_name %>さんの会員情報編集</h3>
 
+    	<tr>
+		<td>会員ID</td>
+		<td><%= @member.id %></td>
+	</tr>
 
-<%= form_for(@member) do |f| %>
+<%= form_for(@member, url: admins_member_path(@member), method: :patch) do |f| %>
 <table>
+
 <tr>
         <td><%= f.label :名前 %></td>
         <td>
@@ -32,9 +41,14 @@
         <td><%= f.label :電話番号（ハイフンなし） %></td>
         <td><%= f.text_field :phone %></td>
 </tr>
+<tr>
+<td>会員ステータス</td>
+<td><%= f.radio_button :withdrawal_status, 1 %>
+<%= f.label :withdrawal_status,"有効"%></td>
+<td><%= f.radio_button :withdrawal_status, 2 %>
+<%= f.label :withdrawal_status,"退会済み"%></td>
+</tr>
         </table>
-        
 
         <%= f.submit '編集内容を保存する' %>
-        <%= link_to '退会する', members_confirmation_path %>
-    <% end %>
+        <% end %>
