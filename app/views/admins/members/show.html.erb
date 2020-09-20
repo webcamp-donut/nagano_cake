@@ -1,0 +1,60 @@
+<h1>Admins::Members#show</h1>
+<p>Find me in app/views/admins/members/show.html.erb</p>
+<h3>
+    <%= @member.last_name %>
+    <%= @member.first_name %>さんの会員詳細</h3>
+<table>
+    <tr>
+        <td>顧客ID</td>
+        <td>
+            <%= @member.id%>
+        </td>
+        <td>
+            <% if @member.withdrawal_status == 1 %>
+            <p>有効会員</p>
+            <% else %>
+            <p>退会済</p>
+            <% end %>
+        </td>
+    </tr>
+    <tr>
+        <td>氏名</td>
+        <td>
+            <%= @member.last_name %>
+            <%= @member.first_name %>
+        </td>
+    </tr>
+    <tr>
+        <td>フリガナ</td>
+        <td>
+            <%= @member.kana_last_name %>
+            <%= @member.kana_first_name %>
+        </td>
+    </tr>
+    <tr>
+        <td>郵便番号</td>
+        <td>
+            <%= @member.postal_code %>
+        </td>
+    </tr>
+    <tr>
+        <td>住所</td>
+        <td>
+            <%= @member.address%>
+        </td>
+    </tr>
+    <tr>
+        <td>電話番号</td>
+        <td>
+            <%= @member.phone %>
+        </td>
+    </tr>
+    <tr>
+        <td>メールアドレス</td>
+        <td>
+            <%= @member.email%>
+        </td>
+    </tr>
+</table>
+
+<%= link_to '編集する', edit_admins_member_path(@member) %>
