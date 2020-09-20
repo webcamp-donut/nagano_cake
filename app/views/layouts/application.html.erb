@@ -20,59 +20,71 @@
         <ul class="nav navbar-nav navbar-right">
           <% if admin_signed_in? %>
             <li>
-              <%= link_to '', admins_products_path %>
-              <button type="button" class="btn btn-secondary">商品一覧</button>
+              <%= link_to(admins_products_path) do %>
+                <button type="button" class="btn btn-secondary">商品一覧</button>
+              <% end %>
             </li>
             <li>
-              <%= link_to '', admins_member_path %>
-              <button type="button" class="btn btn-secondary">会員一覧</button>
+              <%= link_to(admins_members_path) do %>
+                <button type="button" class="btn btn-secondary">会員一覧</button>
+              <% end %>
             </li>
             <li>
-              <%= link_to '', admins_orders_path %>
-              <button type="button" class="btn btn-secondary">注文履歴一覧</button>
+              <%= link_to(admins_orders_path) do %>
+                <button type="button" class="btn btn-secondary">注文履歴一覧</button>
+              <% end %>
             </li>
             <li>
-              <%= link_to '', admins_genres_path %>
-              <button type="button" class="btn btn-secondary">ジャンル一覧</button>
+              <%= link_to(admins_genres_path) do %>
+                <button type="button" class="btn btn-secondary">ジャンル一覧</button>
+              <% end %>
             </li>
             <li>
-              <%= link_to '', destroy_admin_session_path, method: :delete %>
+              <%= link_to(destroy_admin_session_path, method: :delete) do %>
               <button type="button" class="btn btn-secondary">ログアウト</button>
+              <% end %>
             </li>
           <% elsif member_signed_in? %>
             <li>
-              <%= link_to '', member_path %>
-              <button type="button" class="btn btn-secondary">マイページ</button>
+              <%= link_to(members_path) do %>
+                <button type="button" class="btn btn-secondary">マイページ</button>
+              <% end %>
             </li>
             <li>
-              <%= link_to '', products_path %>
-              <button type="button" class="btn btn-secondary">商品一覧</button>
+              <%= link_to(products_path) do %>
+                <button type="button" class="btn btn-secondary">商品一覧</button>
+              <% end %>
             </li>
             <li>
-              <%= link_to '', cart_items_path %>
-              <button type="button" class="btn btn-secondary">カート</button>
+              <%= link_to(cart_items_path) do %>
+                <button type="button" class="btn btn-secondary">カート</button>
+              <% end %>
             </li>
             <li>
-              <%= link_to '', destroy_member_session_path, method: :delete %>
-              <button type="button" class="btn btn-secondary">ログアウト</button>
+              <%= link_to(destroy_member_session_path, method: :delete) do %>
+                <button type="button" class="btn btn-secondary">ログアウト</button>
+              <% end %>
             </li>
           <% else %>
             <li>
-              <%= link_to '', root_path %>
-              <button type="button" class="btn btn-secondary">About</button>
-
+              <%= link_to(root_path) do %>
+                <button type="button" class="btn btn-secondary">About</button>
+              <% end %>
             </li>
             <li>
-              <%= link_to '', products_path %>
-              <button type="button" class="btn btn-secondary">商品一覧</button>
+              <%= link_to(products_path) do %>
+                <button type="button" class="btn btn-secondary">商品一覧</button>
+              <% end %>
             </li>
             <li>
-              <%= link_to '', new_member_registration_path %>
-              <button type="button" class="btn btn-secondary">新規登録</button>
+              <%= link_to(new_member_registration_path) do %>
+                <button type="button" class="btn btn-secondary">新規登録</button>
+              <% end %>
             </li>
             <li>
-              <%= link_to '', new_member_session_path %>
-              <button type="button" class="btn btn-secondary">ログイン</button>
+              <%= link_to(new_member_session_path) do %>
+                <button type="button" class="btn btn-secondary">ログイン</button>
+              <% end %>
             </li>
           <% end %>
         </ul>

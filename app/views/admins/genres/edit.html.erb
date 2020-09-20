@@ -1,0 +1,13 @@
+<h1>ジャンル編集</h1>
+
+<%= form_with model: [:admins, @genre], local: true do |f| %>
+	<%= f.label :name, "ジャンル" %>
+    <%= f.text_field :name %>
+
+    <%= f.radio_button :status, :表示, :checked => true %>
+    <%= f.label :status, "表示" %>
+    <%= f.radio_button :status, :非表示, :checked => false %>
+    <%= f.label :status, "非表示" %>
+
+	<%= f.submit "追加" %>
+<% end %>

@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   devise_for :members, controllers: {
     sessions:      'members/sessions',
     passwords:     'members/passwords',
-    registrations: 'members/registrations'
   }
   get '/member/' => 'members#show'
   get '/member/edit' => 'members#edit'
@@ -27,9 +26,8 @@ Rails.application.routes.draw do
     registrations: 'admins/registrations'
   }
 
-  get '/admin' => 'admins#top'
-
   namespace :admins do
+    root to: 'orders#top'
   resources :orders ,only: [:index, :show, :update]
   resources :order_products ,only:[:update]
   resources :genres ,only:[:index, :edit, :create, :update]
