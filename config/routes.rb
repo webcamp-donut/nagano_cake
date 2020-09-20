@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     sessions:      'members/sessions',
     passwords:     'members/passwords',
   }
-  resource :members, only: [:show]
+  get '/member/' => 'members#show'
   get '/member/edit' => 'members#edit'
   patch '/member/' => 'members#update'
   get  '/members/confirmation' => 'members#confirmation'
