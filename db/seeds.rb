@@ -28,8 +28,3 @@
 #     explanation: '美味しい',
 #     tax_excluded_price: '1400'
 #     )
-
-Admin.create!(
-    email: 'webcampdonut@gmail.com',
-    password: 'dmmwebcamp08'
-    )
