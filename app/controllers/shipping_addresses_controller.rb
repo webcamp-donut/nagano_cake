@@ -2,11 +2,12 @@ class ShippingAddressesController < ApplicationController
 
   def index
     @shipping_address = ShippingAddress.new
-    @shipping_addresses = ShippingAddress.all
+    @shipping_addresses = current_member.shipping_addresses
   end
 
   def create
     @shipping_address = ShippingAddress.new(shipping_address_params)
+    @shipping_address.member_id = current_member.id
     if @shipping_address.save
       redirect_to request.referer
     else

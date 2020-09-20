@@ -19,7 +19,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% @shipping_addresses.each do |shipping_address|  %>
+		<% current_member.shipping_addresses.each do |shipping_address|  %>
 			<tr>
 				<td><%= shipping_address.postal_code %></td>
 				<td><%= shipping_address.address %></td>
