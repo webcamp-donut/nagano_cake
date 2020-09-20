@@ -9,7 +9,7 @@
 		<td><%= @member.id %></td>
 	</tr>
 
-<%= form_for(@member) do |f| %>
+<%= form_for(@member, url: admins_member_path(@member), method: :patch) do |f| %>
 <table>
 
 <tr>
@@ -40,6 +40,13 @@
 <tr>
         <td><%= f.label :電話番号（ハイフンなし） %></td>
         <td><%= f.text_field :phone %></td>
+</tr>
+<tr>
+<td>会員ステータス</td>
+<td><%= f.radio_button :withdrawal_status, 1 %>
+<%= f.label :withdrawal_status,"有効"%></td>
+<td><%= f.radio_button :withdrawal_status, 2 %>
+<%= f.label :withdrawal_status,"退会済み"%></td>
 </tr>
         </table>
 

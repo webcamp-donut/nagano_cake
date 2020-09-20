@@ -6,9 +6,9 @@
     def update
       @member = Member.find(params[:id])
       if @member.update(member_params)
-        redirect_to :show
+        redirect_to admins_member_path(@member)
       else
-        render 
+        render
       end
     end
 

@@ -13,7 +13,7 @@ class MembersController < ApplicationController
     def update
     @member = current_member
     if @member.update(member_params)
-      redirect_to members_path
+      redirect_to member_path
     else
       render :edit
     end

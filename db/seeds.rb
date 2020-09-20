@@ -6,36 +6,30 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Member.create!(
-#      email: 'aaa@aaa',
-#      password: 'aaaaaa',
-#      first_name: 'kusakabe',
-#      kana_last_name: 'クサカベ',
-#      kana_first_name: 'タカシ',
-#      postal_code: '2750002',
-#      address: '千葉県習志野市',
-#      phone: '0801231234',
-#      withdrawal_status: '1',
-#      last_name: 'takashi',
-#      )
 
-Product.create!(
-    genre_id: '1',
-    name: 'ショートケーキ',
-    explanation: '美味しい',
-    tax_excluded_price: '1000'
-    )
+# Product.create!(
+#     genre_id: '1',
 
-Product.create!(
-    genre_id: '2',
-    name: 'モンブラン',
-    explanation: '美味しい',
-    tax_excluded_price: '1200'
-    )
+#     name: 'ショートケーキ',
+#     explanation: '美味しい',
+#     tax_excluded_price: '1000'
+#     )
 
-Product.create!(
-    genre_id: '3',
-    name: 'エクレア',
-    explanation: '美味しい',
-    tax_excluded_price: '1400'
+# Product.create!(
+#     genre_id: '2',
+#     name: 'モンブラン',
+#     explanation: '美味しい',
+#     tax_excluded_price: '1200'
+#     )
+
+# Product.create!(
+#     genre_id: '3',
+#     name: 'エクレア',
+#     explanation: '美味しい',
+#     tax_excluded_price: '1400'
+#     )
+
+Admin.create!(
+    email: 'webcampdonut@gmail.com',
+    password: 'dmmwebcamp08'
     )
