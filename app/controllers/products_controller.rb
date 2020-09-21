@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
+    @products = Product.where(sale_status: 0)
   end
+
 end
