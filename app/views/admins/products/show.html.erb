@@ -1,0 +1,10 @@
+<br><br>
+<%= flash[:success] %>
+<h1>商品詳細</h1>
+<p><%= attachment_image_tag(@product, :image, :fill,200,200, fallback: "no_image.jpg", size:'200x200') %></p>
+<p>商品名 : <%= @product.name %></p>
+<p>商品説明 : <%= @product.explanation %></p>
+<p>ジャンル : <%=@product.genre.name %><p>
+<p>税込価格(税抜金額) : <%= include_tax(@product.tax_excluded_price).to_i %>(<%= @product.tax_excluded_price %>)円</p>
+<p>販売ステータス : <%= @product.sale_status %></p>
+<%= link_to "編集する", edit_admins_product_path(@product) %>

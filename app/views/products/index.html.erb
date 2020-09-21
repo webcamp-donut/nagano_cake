@@ -2,6 +2,7 @@
 <div class="col-lg-9">
   <h2>商品一覧<small>(全<%= @products.count %>件)</small></h2>
 
+
       <% @products.each do |product| %>
         <div>
             <%= attachment_image_tag(product, :image, :fill,200,200, fallback: "no_image.jpg", size:'200x200') %>
@@ -10,4 +11,6 @@
         </div>
       <% end %>
 </div>
+
+<%= render 'admins/genres/research', genres: @genres %>
 
