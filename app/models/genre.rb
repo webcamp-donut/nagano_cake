@@ -1,4 +1,5 @@
 class Genre < ApplicationRecord
-	enum status: [:表示, :非表示 ]
+  
 	has_many :products
+	enum status: {表示:1, 非表示:2}
 end
