@@ -36,7 +36,8 @@
     <%= f.submit " ログイン " %>
   </div>
 
-  <h5 style="margin-top:35px">登録がお済みでない方</h5>
+
+  <h5 class="sign_up_link">登録がお済みでない方</h5>
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
     <%= link_to "こちら", new_registration_path(resource_name) %>　から新規登録を行ってください。
   <% end %>
@@ -47,9 +48,7 @@
   <%# <% end %>
 <% end %>
 
-<<<<<<< HEAD
 <h3>登録がお済みでない方</h3>
 <span><%= link_to 'こちら', new_member_registration_path %>から新規登録を行ってください。</span>
-=======
+
 <%# <%= render "members/shared/links" %>
->>>>>>> origin/develop
