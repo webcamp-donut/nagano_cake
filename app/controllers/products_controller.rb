@@ -7,7 +7,9 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
+    @products = Product.where(sale_status: 0)
     @genres = Genre.where(status: 1)
+
   end
+
 end
