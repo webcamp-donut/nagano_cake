@@ -1,37 +1,33 @@
-<h3>注文履歴詳細</h3>
-<table>
-    <tr>
-        <td>購入者</td>
-        <td>
+<h2>注文履歴詳細</h2><br><br>
 
-            <%= @order.member.last_name %>
-            <%= @order.member.first_name %>
+<big>
+<div class="row">
+  <p class="col-xs-2">購入者</p>
+  <%= @order.member.last_name %><%= @order.member.first_name %></p>
+</div><br>
 
-        </td>
-    </tr>
-    <tr>
-        <td>配送先</td>
-        <td>
-            <%= @order.address %>
-        </td>
-    </tr>
-    <tr>
-        <td>支払い方法</td>
-        <td>
-            <%= @order.payment %>
-        </td>
-    </tr>
-    <tr>
-        <td>注文ステータス</td>
-        <td>
-            <%= form_for @order, url:  admins_order_path(@order), local: true do |f| %>
-            <%= f.select :order_status, Order.order_statuses.keys, class: "prefecture-select"%>
-            <%= f.submit %>
-            <% end %>
-        </td>
-    </tr>
-</table>
-<table>
+<div class="row">
+  <p class="col-xs-2">配送先</p>
+  <%= @order.address %>
+</div><br>
+
+<div class="row">
+  <p class="col-xs-2">支払い方法</p>
+  <%= @order.payment %>
+</div><br>
+
+<div class="row">
+     <p class="col-xs-2">注文ステータス</p>
+  <%= form_for @order, url:  admins_order_path(@order), local: true do |f| %>
+     <%= f.select :order_status, Order.order_statuses.keys, class: "prefecture-select" %>
+    　　<%= f.submit'更新',class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<br><br>
+<div class="col-sm-8">
+<table class="table table-striped">
+  <thead>
     <tr>
         <th>商品</th>
         <th>単価（税込）</th>
@@ -39,6 +35,7 @@
         <th>小計</th>
         <th>制作ステータス</th>
     </tr>
+  </thead>
     <% total = 0 %>
     <% @order.order_products.each do |order_product|  %>
     <tr>
@@ -46,42 +43,39 @@
             <%= order_product.product.name %>
         </td>
         <td>
-            <%= include_tax(order_product.product.tax_excluded_price).to_i %>
+            <%= include_tax(order_product.product.tax_excluded_price).to_i %>円
         </td>
         <td>
             <%= order_product.quantity %>
         </td>
         <td>
             <%= subtotal = include_tax(order_product.product.tax_excluded_price).to_i * order_product.quantity %>
-            <% total += subtotal %>
+            <% total += subtotal %>円
         </td>
         <td>
             <%= form_for order_product, url: admins_order_product_path(order_product), local: true do |f| %>
             <%= f.select :production_status, OrderProduct.production_statuses.keys, class: "prefecture-select"%>
             <%= f.hidden_field :order_id, :value => order_product.order_id %>
-            <%= f.submit %>
+            　　<%= f.submit'更新',class: 'btn btn-primary' %>
             <% end %>
         </td>
     </tr>
     <% end %>
 </table>
+</div>
+<br>
 <table>
     <tr>
-        <td>商品合計</td>
-        <td>
-            <%= total %>
-        </td>
+      <td><big>商品合計</td>
+      <td>　　<%= total %>円</big></td>
     </tr>
     <tr>
-        <td>送料</td>
-        <td>
-            <%= @order.delivery_fee %>
-        </td>
+      <td><big>送料</td>　
+      <td>　　<%= @order.delivery_fee %>円</big></td>
     </tr>
     <tr>
-        <td>請求金額合計</td>
-        <td>
-            <%= total + @order.delivery_fee.to_i%>
-        </td>
+      <td><big>請求金額合計</td>　
+      <td>　　<%= total + @order.delivery_fee.to_i%>円</big></td>
     </tr>
 </table>
+</big>

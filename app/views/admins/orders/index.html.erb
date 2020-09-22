@@ -1,5 +1,5 @@
-<h3>注文履歴一覧</h3>
-<table>
+<h2>注文履歴一覧</h2><br><br>
+<table class="table table-striped">
     <tr>
         <th>購入日時</th>
         <th>購入者</th>
@@ -9,7 +9,7 @@
     <% @orders.each do |order|%>
     <tr>
         <td>
-            <%=link_to order.created_at, admins_order_path(order) %>
+            <%=link_to order.created_at.to_s(:datetime_jp), admins_order_path(order) %>
         </td>
         <td>
             <%= order.member.last_name %>

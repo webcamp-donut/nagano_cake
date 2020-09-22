@@ -1,33 +1,35 @@
+<br><br>
+<img class="home_img" src="/assets/sweets5.jpg" width="1170" height="250" class="lazyload">
+
 <div class="top_text">
 ようこそ、NaganoCakeへ！<br>
 このサイトは、ケーキ販売のECサイトになります。<br>
 会員でない方も商品の閲覧はできますが、<br>
-購入には会員登録が必要になります。
+購入には<%=link_to "会員登録",new_member_registration_path %>が必要になります。
 </div>
 
 <h2 class="top_product">オススメ商品</h2>
 <table class="top_product">
-<td>
-<p><img src="no_image.jpg" class="top_img"></p>
-<p>商品名</p>
-<p>¥1,000</p>
-</td>
-<td>
-<p><img src="no_image.jpg" class="top_img"></p>
-<p>商品名</p>
-<p>¥1,000</p>
-</td>
-<td>
-<p><img src="no_image.jpg" class="top_img"></p>
-<p>商品名</p>
-<p>¥1,000</p>
-</td>
-<td>
-<p><img src="no_image.jpg" class="top_img"></p>
-<p>商品名</p>
-<p>¥1,000</p>
-</td>
-
+    <td class="top_list">
+      <p><img src="/assets/sweets2.jpg" class="top_img"></p>
+      <p>プリン</p>
+      <p>¥1,000</p>
+    </td>
+    <td class="top_list">
+      <p><img src="/assets/sweets3.jpg" class="top_img"></p>
+      <p>チョコケーキ</p>
+      <p>¥1,000</p>
+    </td>
+    <td class="top_list">
+      <p><img src="/assets/sweets4.jpg" class="top_img"></p>
+      <p>シフォンケーキ</p>
+      <p>¥1,000</p>
+    </td>
+    <td class="top_list">
+      <p><img src="/assets/sweets1.jpg" class="top_img"></p>
+      <p>ショートケーキ</p>
+      <p>¥1,000</p>
+    </td>
 </table>
 
 <p class="top_index"><%= link_to 'もっと見る＞',"products" %></p>
