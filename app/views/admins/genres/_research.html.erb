@@ -1,6 +1,7 @@
-<p>ジャンル検索</p>
-<ul>
+
+<ul class="list-group">
+	<li class="list-group-item"><strong>ジャンル検索</strong></li>
 	<% genres.each do |genre| %>
-		<li><%= genre.name %></li>
+		<li class="list-group-item"><%= genre.name %></li>
 	<% end %>
 </ul>
