@@ -9,6 +9,6 @@ class Order < ApplicationRecord
 
 	enum adress: [:member_address, :registerd_address, :new_address ]
 
-	enum order_status: { 入金待ち: 1, 入金確認: 2, 製作中: 3, 発送準備中: 4, 発送済み: 5 }
+	enum order_status: { 入金待ち:1, 入金確認:2, 製作中:3, 発送準備中:4, 発送済み:5 }
 
 end

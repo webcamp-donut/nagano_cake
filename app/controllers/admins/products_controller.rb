@@ -11,7 +11,7 @@ class Admins::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-   if@product.save
+   if @product.save
      flash[:success] = "商品情報が登録されました。"
      redirect_to admins_product_path(@product)
    else
