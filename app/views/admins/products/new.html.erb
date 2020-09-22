@@ -1,15 +1,38 @@
-<h2>商品新規登録</h2>
+<h2>商品新規登録</h2><br><br><br>
+
     <%= form_for @product, url:  admins_products_path(@product), local: true do |f| %>
-         <%= f.attachment_field :image %>
-         <h4>商品名</h4>
-            <%= f.text_field :name %>
-         <h4>商品説明</h4>
-            <%= f.text_area :explanation %>
-         <h4>ジャンル</h4>
-            <%= f.collection_select :genre_id, Genre.all, :id, :name %>
-         <h4>税抜価格</h4>
-            <%= f.text_field :tax_excluded_price %>円
-         <h4>販売ステータス</h4>
-            <%= f.select :sale_status,{ 販売中:"販売中", 売切れ:"売切れ"} %>
-         <%= f.submit '新規登録',class: 'btn btn-primary' %>  
+      <div class="col-sm-5"> 
+      <table class="table">
+         <tr height="50"><%= f.attachment_field :image %></tr>
+         <tr>
+            <td width="120" height="80">商品名</td>
+            <td><%= f.text_field :name %></td>
+         </tr>
+
+         <tr>
+            <td width="120" height="80">商品説明</td>
+            <td><%= f.text_area :explanation %></td>
+         </tr>
+
+         <tr>
+            <td width="120" height="80">ジャンル</td>
+            <td><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: true %></td>
+         </tr>
+
+         <tr>
+            <td width="120" height="80">税抜価格</td>
+            <td><%= f.text_field :tax_excluded_price %>円</td>
+         </tr>
+
+         <tr>
+            <td width="120" height="80">販売ステータス</td>
+            <td><%= f.select :sale_status,{ 販売中:"販売中", 売切れ:"売切れ"} %></td>
+         </tr>
+
+         <tr>
+            <td width="120" height="80"><%= f.submit '新規登録',class: 'btn btn-primary' %></td>
+         </tr>
+
+      <table>
+      </div>
     <% end %> 
