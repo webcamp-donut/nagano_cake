@@ -1,20 +1,23 @@
 <h2>商品一覧<small>(全<%= @products.count %>件)</small></h2>
+
 <%= link_to "+", new_admins_product_path, class: 'btn btn-default btn-lg pull-right' %>
-<% @products.each do |product| %>
-  <table class="table">
-  <tr>
-  <th>商品ID</th>
-  <th>商品名</th>
-  <th>税抜価格</th>
-  <th>ジャンル</th>
-  <th>ステータス</th>
-  <tr>
-  <tr>
-      <td><%= product.id %></td>
-      <td><%= link_to product.name, "products/#{product.id}" %></td>
-      <td>¥<%= product.tax_excluded_price %>(税抜)</td>
-      <td><%=product.genre.name %></td>
-      <td><%= product.sale_status %></td>
-  </tr>
+
+  <table class="table table-striped">
+    <% @products.each do |product| %>
+      <tr>
+        <th>商品ID</th>
+        <th>商品名</th>
+        <th>税抜価格</th>
+        <th>ジャンル</th>
+        <th>ステータス</th>
+      <tr>
+      <tr>
+        <td><%= product.id %></td>
+        <td><%= link_to product.name, "products/#{product.id}" %></td>
+        <td>¥<%= product.tax_excluded_price %>(税抜)</td>
+        <td><%=product.genre.name %></td>
+        <td><%= product.sale_status %></td>
+      </tr>
+      
+    <% end %>
   </table>
-<% end %>

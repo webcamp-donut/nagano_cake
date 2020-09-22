@@ -1,21 +1,19 @@
-<h1>Admins::Members#show</h1>
-<p>Find me in app/views/admins/members/show.html.erb</p>
+
 <h3>
     <%= @member.last_name %>
     <%= @member.first_name %>さんの会員詳細</h3>
-<table>
+<table class="table table-striped">
     <tr>
         <td>顧客ID</td>
         <td>
-            <%= @member.id%>
-        </td>
-        <td>
-            <% if @member.withdrawal_status == 1 %>
-            <p>有効会員</p>
+            <%= @member.id %>
+            <% if @member.withdrawal_status == 1 %>　
+            <p class="label label-primary">有効会員</p>
             <% else %>
             <p>退会済</p>
             <% end %>
         </td>
+        
     </tr>
     <tr>
         <td>氏名</td>
@@ -57,4 +55,4 @@
     </tr>
 </table>
 
-<%= link_to '編集する', edit_admins_member_path(@member) %>
+<%= link_to '編集する', edit_admins_member_path(@member),class: 'btn btn-primary' %>

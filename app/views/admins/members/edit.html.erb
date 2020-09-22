@@ -1,54 +1,52 @@
-<h1>Admins::Members#edit</h1>
-<p>Find me in app/views/admins/members/edit.html.erb</p>
- <h3>
-    <%= @member.last_name %>
-    <%= @member.first_name %>さんの会員情報編集</h3>
 
-    	<tr>
-		<td>会員ID</td>
-		<td><%= @member.id %></td>
-	</tr>
+ <h2><%= @member.last_name %><%= @member.first_name %>さんの会員情報編集</h2>
+
+<div class="row">
+  <p class="col-xs-2">会員ID</p>
+  <%= @member.id %>
+</div><br>
 
 <%= form_for(@member, url: admins_member_path(@member), method: :patch) do |f| %>
-<table>
 
-<tr>
-        <td><%= f.label :名前 %></td>
-        <td>
-          (姓)<%= f.text_field :last_name %>
-        </td>
-        <td>
-          (名)<%= f.text_field :first_name %>
-        </td>
-</tr>
-        <td><%= f.label :フリガナ %></td>
-        <td>
-          (セイ)<%= f.text_field :kana_last_name%>
-        </td>
-        <td>
-          (メイ)<%= f.text_field :kana_first_name%>
-        </td>
-<tr>
-        <td><%= f.label :Eメール %></td>
-        <td><%= f.text_field :email %></td>
-<tr>
-        <td><%= f.label :郵便番号（ハイフンなし） %></td>
-        <td><%= f.text_field :postal_code %></td>
-</tr>
-        <td><%= f.label :住所 %></td>
-        <td><%= f.text_field :address %></td>
-<tr>
-        <td><%= f.label :電話番号（ハイフンなし） %></td>
-        <td><%= f.text_field :phone %></td>
-</tr>
-<tr>
-<td>会員ステータス</td>
-<td><%= f.radio_button :withdrawal_status, 1 %>
-<%= f.label :withdrawal_status,"有効"%></td>
-<td><%= f.radio_button :withdrawal_status, 2 %>
-<%= f.label :withdrawal_status,"退会済み"%></td>
-</tr>
-        </table>
+<div class="row">
+  <p class="col-xs-2"><%= f.label :名前 %></p>
+  <%= f.text_field :last_name %>
+  <%= f.text_field :first_name %>
+</div><br>
 
-        <%= f.submit '編集内容を保存する' %>
-        <% end %>
+<div class="row">
+<p class="col-xs-2"><%= f.label :フリガナ %></p>
+<%= f.text_field :kana_last_name %>
+<%= f.text_field :kana_first_name %>
+</div><br>
+
+<div class="row">
+<p class="col-xs-2"><%= f.label :Eメール %></p>
+<%= f.email_field :email, :size=>"50"%>
+</div><br>
+
+<div class="row">
+<p class="col-xs-2"><%= f.label :郵便番号（ハイフンなし） %></p>
+<%= f.text_field :postal_code %>
+</div><br>
+
+<div class="row">
+<p class="col-xs-2"><%= f.label :住所 %></p>
+<%= f.text_field :address, :size=>"50" %>
+</div><br>
+
+<div class="row">
+<p class="col-xs-2"><%= f.label :電話番号（ハイフンなし） %></p>
+<%= f.telephone_field :phone, :size=>"50" %>
+</div><br>
+
+<div class="row">
+    <span class="col-xs-3"><strong>会員ステータス</strong></span>
+    <%= f.radio_button :withdrawal_status, 1 %>
+    <%= f.label :withdrawal_status,"有効"%>
+    <%= f.radio_button :withdrawal_status, 2 %>
+    <%= f.label :withdrawal_status,"退会済み"%>
+</div><br>
+
+<%= f.submit '編集内容を保存する',class: 'btn btn-primary' %>
+<% end %>
