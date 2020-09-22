@@ -1,0 +1,87 @@
+<h3>注文履歴詳細</h3>
+<table>
+    <tr>
+        <td>購入者</td>
+        <td>
+
+            <%= @order.member.last_name %>
+            <%= @order.member.first_name %>
+
+        </td>
+    </tr>
+    <tr>
+        <td>配送先</td>
+        <td>
+            <%= @order.address %>
+        </td>
+    </tr>
+    <tr>
+        <td>支払い方法</td>
+        <td>
+            <%= @order.payment %>
+        </td>
+    </tr>
+    <tr>
+        <td>注文ステータス</td>
+        <td>
+            <%= form_for @order, url:  admins_order_path(@order), local: true do |f| %>
+            <%= f.select :order_status, Order.order_statuses.keys, class: "prefecture-select"%>
+            <%= f.submit %>
+            <% end %>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <th>商品</th>
+        <th>単価（税込）</th>
+        <th>個数</th>
+        <th>小計</th>
+        <th>制作ステータス</th>
+    </tr>
+    <% total = 0 %>
+    <% @order.order_products.each do |order_product|  %>
+    <tr>
+        <td>
+            <%= order_product.product.name %>
+        </td>
+        <td>
+            <%= include_tax(order_product.product.tax_excluded_price).to_i %>
+        </td>
+        <td>
+            <%= order_product.quantity %>
+        </td>
+        <td>
+            <%= subtotal = include_tax(order_product.product.tax_excluded_price).to_i * order_product.quantity %>
+            <% total += subtotal %>
+        </td>
+        <td>
+            <%= form_for order_product, url: admins_order_product_path(order_product), local: true do |f| %>
+            <%= f.select :production_status, OrderProduct.production_statuses.keys, class: "prefecture-select"%>
+            <%= f.hidden_field :order_id, :value => order_product.order_id %>
+            <%= f.submit %>
+            <% end %>
+        </td>
+    </tr>
+    <% end %>
+</table>
+<table>
+    <tr>
+        <td>商品合計</td>
+        <td>
+            <%= total %>
+        </td>
+    </tr>
+    <tr>
+        <td>送料</td>
+        <td>
+            <%= @order.delivery_fee %>
+        </td>
+    </tr>
+    <tr>
+        <td>請求金額合計</td>
+        <td>
+            <%= total + @order.delivery_fee.to_i%>
+        </td>
+    </tr>
+</table>
