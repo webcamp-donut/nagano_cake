@@ -7,9 +7,8 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.where(sale_status: 0)
     @genres = Genre.where(status: 1)
-
+    @products = Product.where(sale_status: 0, genre_id: @genres)
   end
 
 end

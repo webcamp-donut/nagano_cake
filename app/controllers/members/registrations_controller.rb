@@ -65,7 +65,7 @@ class Members::RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
-    member_path
+    root_path
   end
 
   def configure_permitted_parameters
