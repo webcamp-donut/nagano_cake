@@ -7,24 +7,26 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# Product.create!(
-#     genre_id: '1',
+Product.create!(
+    genre_id: '1',
+    name: 'ショートケーキ',
+    explanation: '美味しい',
+    tax_excluded_price: '1000',
+    sale_status: '1',
+    )
 
-#     name: 'ショートケーキ',
-#     explanation: '美味しい',
-#     tax_excluded_price: '1000'
-#     )
+Product.create!(
+    genre_id: '2',
+    name: 'モンブラン',
+    explanation: '美味しい',
+    tax_excluded_price: '1200',
+    sale_status: '2',
+    )
 
-# Product.create!(
-#     genre_id: '2',
-#     name: 'モンブラン',
-#     explanation: '美味しい',
-#     tax_excluded_price: '1200'
-#     )
-
-# Product.create!(
-#     genre_id: '3',
-#     name: 'エクレア',
-#     explanation: '美味しい',
-#     tax_excluded_price: '1400'
-#     )
+Product.create!(
+    genre_id: '3',
+    name: 'エクレア',
+    explanation: '美味しい',
+    tax_excluded_price: '1400',
+    sale_status: '2',
+    )

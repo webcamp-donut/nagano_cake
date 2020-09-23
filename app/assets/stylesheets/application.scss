@@ -99,3 +99,33 @@
     margin: auto 60px;
 }
 // 
+// 商品一覧
+.products_index_margin {
+    margin-top: 50px;
+}
+.jenre_reserch {
+    margin-top: 80px;
+}
+.flex_container {
+    float: left;
+}
+.pagination>li>a {          
+    border: none;
+    color: #696969;
+  }
+  
+  /* 表示しているページ番号のデザイン */
+  .pagination>.active>a {     
+    background: #93c9ff;     /*背景の色を変える*/
+    border-radius: 15px;     /*角を丸くする*/
+  }
+  
+  /*ホバー時のデザイン*/
+  .pagination>li>a:hover {        
+    border-radius: 15px;    /*角を丸くする*/
+  }
+  .pagenation {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 500px;
+  }
