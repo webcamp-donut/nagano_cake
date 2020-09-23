@@ -46,6 +46,9 @@
                         </li>
                         <% elsif member_signed_in? %>
                         <li>
+                          <p class="welcome">ようこそ、<%= current_member.last_name%><%= current_member.first_name%>さん!</p>
+                        </li>
+                        <li>
                             <%= link_to(member_path) do %>
                             <button type="button" class="btn btn-secondary">マイページ</button>
                             <% end %>
