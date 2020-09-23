@@ -1,28 +1,31 @@
-<div class="row", style="margin-top: 50px;">
-	<div class="col-md-2">
-		<%= render 'admins/genres/research', genres: @genres %>
-	</div>
-	<div class="col-md-9 col-md-offset-1">
-		<div class="col-md-4">
-			<p><%= attachment_image_tag(@product, :image, :fill,200,200, fallback: "no_image.jpg", size:'200x200') %></p>
-		</div>
-		<div class="col-md-5">
-			<h2><strong><%= @product.name %></strong></h2>
-			<p><%= @product.explanation %></p>
-			<h3>¥<%= include_tax(@product.tax_excluded_price).to_i %><small>(税込)</small></h3>
-
-			<div class="row", style="margin-top: 30px;">
-				<%= form_for(@cart_item, url: cart_items_path, html: {method: "post"}) do |f| %>
-					<div class="col-md-5 col-md-offset-2">
-						<%= f.select :quantity, options_for_select((1..10).to_a), {}, {class: "form-control col-xs-2"} %>
-					</div>
-					<div class="col-md-5">
-						<%= f.submit "カートに入れる", class: "btn btn-primary" %>
-					</div>
-					<%= f.hidden_field :member_id, :value => current_member.id %>
-					<%= f.hidden_field :product_id, :value => @product.id %>
-				<% end %>
-			</div>
-		</div>
-	</div>
+<div class="row" , style="margin-top: 50px;">
+        <%= render 'admins/genres/research', genres: @genres %>
+    <div class="col-md-9 col-md-offset-1">
+        <div class="col-md-4">
+            <p>
+                <%= attachment_image_tag(@product, :image, :fill,200,200, fallback: "no_image.jpg", size:'200x200') %>
+            </p>
+        </div>
+        <div class="col-md-5">
+            <h2><strong>
+                    <%= @product.name %></strong></h2>
+            <p>
+                <%= @product.explanation %>
+            </p>
+            <h3>¥
+                <%= include_tax(@product.tax_excluded_price).to_i %><small>(税込)</small></h3>
+            <div class="row" , style="margin-top: 30px;">
+                <%= form_for(@cart_item, url: cart_items_path, html: {method: "post"}) do |f| %>
+                <div class="col-md-5 col-md-offset-2">
+                    <%= f.select :quantity, options_for_select((1..10).to_a), {}, {class: "form-control col-xs-2"} %>
+                </div>
+                <div class="col-md-5">
+                    <%= f.submit "カートに入れる", class: "btn btn-primary" %>
+                </div>
+                <%= f.hidden_field :member_id, :value => current_member.id %>
+                <%= f.hidden_field :product_id, :value => @product.id %>
+                <% end %>
+            </div>
+        </div>
+    </div>
 </div>
