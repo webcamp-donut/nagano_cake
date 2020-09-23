@@ -55,26 +55,28 @@
     </tr>
 </table>
 <table class="index_button" width="200" height="150">
-    <tr>
-        <td>
-            <h4>配送先</h4>
-        </td>
-        <td>
-            <%= link_to(shipping_addresses_path) do %>
-            <button type="button" class="btn btn-info">一覧を見る</button>
-            <% end %>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <h4>注文一覧</h4>
-        </td>
-        <td>
-            <%= link_to(orders_path) do %>
-            <button type="button" class="btn btn-info">一覧を見る</button>
-            <% end %>
-        </td>
-    </tr>
+
+  <tr>
+    <td>
+      <h4>配送先</h4>
+    </td>
+    <td>
+      <%= link_to(shipping_addresses_path) do %>
+        <button type="button" class="btn btn-info">一覧を見る</button>
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h4>注文一覧</h4>
+    </td>
+    <td>
+     <%= link_to(orders_path) do %>
+       <button type="button" class="btn btn-info">一覧を見る</button>
+     <% end %>
+    </td>
+  </tr>
+
 </table>
 <%# <li><%= link_to ' log out', destroy_member_session_path, method: :delete %>
 <%# <p>注文履歴</p> %>

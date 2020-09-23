@@ -14,3 +14,4 @@ class Product < ApplicationRecord
 	end
   end
 end
+

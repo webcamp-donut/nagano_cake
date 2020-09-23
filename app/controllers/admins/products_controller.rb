@@ -1,10 +1,5 @@
 class Admins::ProductsController < ApplicationController
 
-  def index
-    @products = Product.all
-    @genre = Genre.all
-  end
-
   def new
     @product = Product.new
   end
@@ -17,6 +12,11 @@ class Admins::ProductsController < ApplicationController
    else
      render 'new'
    end
+  end
+
+  def index
+    @products = Product.all
+    @genre = Genre.all
   end
 
   def show
@@ -38,7 +38,7 @@ class Admins::ProductsController < ApplicationController
 end
   private
     def product_params
-        params.require(:product).permit(:name, :explanation, :image_id, :tax_excluded_price, :sale_status, :genre_id)
+        params.require(:product).permit(:name, :explanation, :tax_excluded_price, :sale_status, :genre_id, :image)
     end
 
 end
