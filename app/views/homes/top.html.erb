@@ -1,12 +1,17 @@
 <br><br>
+<div class="row">
+<%= render 'admins/genres/research', genres: @genres %>
+<div class="col-md-9">
 <img class="home_img" src="/assets/sweets5.jpg" width="1170" height="250" class="lazyload">
-
+<div class="">
 <div class="top_text">
 ようこそ、NaganoCakeへ！<br>
 このサイトは、ケーキ販売のECサイトになります。<br>
 会員でない方も商品の閲覧はできますが、<br>
 購入には<%=link_to "会員登録",new_member_registration_path %>が必要になります。
 </div>
+
+
 
 <h2 class="top_product">オススメ商品</h2>
 <table class="top_product">
@@ -33,5 +38,6 @@
 </table>
 
 <p class="top_index"><%= link_to 'もっと見る＞',"products" %></p>
+</div>
+</div>
 
-<%= render 'admins/genres/research', genres: @genres %>
