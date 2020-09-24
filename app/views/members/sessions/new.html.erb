@@ -8,7 +8,7 @@
 
 <div class="col-lg-4"></div>
 <div class="col-lg-4">
-
+<%= flash[:error] %>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="mail">
     <%= f.label :"メールアドレス" %>
@@ -48,7 +48,5 @@
   <%# <% end %>
 <% end %>
 
-<h3>登録がお済みでない方</h3>
-<span><%= link_to 'こちら', new_member_registration_path %>から新規登録を行ってください。</span>
 
 <%# <%= render "members/shared/links" %>
