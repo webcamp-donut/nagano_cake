@@ -16,8 +16,23 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- .nav navbar-nav {
-     padding: auto auto;
+ .header_conteiner {
+    padding: auto auto;
+ }
+ .title {
+    color: red;
+    text-align: center;
+    font-size: 20px;
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    -webkit-transform : translate(-50%,-50%);
+    transform : translate(-50%,-50%);
+    text-align: center;
+ }
+ .title > image_tag {
+     width: 20%;
+     height: 50px;
  }
  .welcome {
      color:white;
@@ -120,8 +135,8 @@
   
   /* 表示しているページ番号のデザイン */
   .pagination>.active>a {     
-    background: #93c9ff;     /*背景の色を変える*/
-    border-radius: 15px;     /*角を丸くする*/
+    background: #777777;     /*背景の色を変える*/
+    border-radius: 5px;     /*角を丸くする*/
   }
   
   /*ホバー時のデザイン*/
@@ -133,3 +148,17 @@
     margin: 0 auto;
     max-width: 500px;
   }
+// フッター
+footer {
+    height: 90px;
+    color: #777777;
+    text-align: center;
+    border-top-style: solid;
+    background-color: #001100;
+}
+.footer_font_size {
+    font-size: 20px;
+    margin-top: 30px;
+    font-family: osaka-mono;
+}
+// 
