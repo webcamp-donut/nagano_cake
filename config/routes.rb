@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :shipping_addresses ,only: [:index, :new, :create, :edit, :update, :destroy]
   post '/orders/confirmation' => 'orders#confirmation'
   get '/orders/thank' => 'orders#thank'
+  resources :genres, only: [:show]
   resources :orders,only: [:index, :new, :create, :show]
 
 
