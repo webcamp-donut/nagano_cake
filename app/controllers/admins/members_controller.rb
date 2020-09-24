@@ -13,7 +13,7 @@
     end
 
     def index
-      @members = Member.all
+      @members = Member.page(params[:page]).reverse_order
     end
 
     def show
