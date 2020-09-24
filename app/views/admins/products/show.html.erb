@@ -2,7 +2,7 @@
 <%= flash[:success] %>
 <div class="col-sm-5">
 <table class="table table-striped">
-  <tr><%= attachment_image_tag(@product, :image, :fill,200,200, fallback: "no_image.jpg", size:'200x200') %></tr>
+  <tr><%= attachment_image_tag(@product, :image, :fill,200,200, fallback: "no_image.jpg", size:'200x200',  format: "jpg") %></tr>
   <tr>
   <td width="150" height="50">商品名</td>
   <td><%= @product.name %></td>
