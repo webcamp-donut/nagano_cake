@@ -1,4 +1,4 @@
-<h2>商品一覧<small>(全<%= @products.count %>件)</small></h2>
+<h2>検索結果<small>(全<%= @products.count %>件)</small></h2>
 
 <%= link_to "+", new_admins_product_path, class: 'btn btn-default btn-lg pull-right' %>
 
@@ -18,7 +18,5 @@
         <td><%=product.genre.name %></td>
         <td><%= product.sale_status %></td>
       </tr>
-      
     <% end %>
-    <%= paginate @products %>
   </table>

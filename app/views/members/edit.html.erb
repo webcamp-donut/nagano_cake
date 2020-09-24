@@ -1,8 +1,6 @@
-
-    <h3 class="member_edit">登録情報編集</h3>
-
-
+<h3 class="member_edit">登録情報編集</h3>
 <%= form_for(@member) do |f| %>
+
         <table class="mamber_edit_table">
                 <tr>
                         <th class="th_name_width">名前</th>
@@ -19,11 +17,11 @@
                         <th>フリガナ</th>
                         <td><span> (セイ)</span></td>
                         <td>
-                                <%= f.text_field :last_name %>
+                                <%= f.text_field :kana_last_name %>
                         </td>
                         <td><span> (メイ)</span></td>
                         <td>
-                                <%= f.text_field :first_name %>
+                                <%= f.text_field :kana_first_name %>
                         </td>
                 </tr>
                 <tr>
@@ -69,3 +67,4 @@
           </tr>
         </table>
     <% end %>
+

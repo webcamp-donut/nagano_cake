@@ -1,85 +1,97 @@
-  <div class="row" >
-    <div class="col-md-offset-1" >
-      <h3>注文履歴詳細</h3>
+<div class="row">
+    <div class="col-md-offset-1">
+        <h3>注文履歴詳細</h3>
     </div>
-  </div>
-
+</div>
 <% total = 0 %>
-
 <div class="row">
-	<div class="col-md-6">
-		<p><strong>注文情報</strong></p>
-			<table class="table table-bordered">
-				<tr>
-					<td class="active">注文日</td>
-					<td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
-				</tr>
-				<tr>
-					<td class="active">配送先</td>
-					<td><%= @order.postal_code %><br>
-							<%= @order.address %><br>
-							<%= @order.name %><br>
-						</td>
-				</tr>
-				<tr>
-					<td class="active">支払い方法</td>
-					<td><%= @order.payment %></td>
-				</tr>
-				<tr>
-					<td class="active">ステータス</td>
-					<td><%= @order.order_status %></td>
-				</tr>
-		</table>
-	</div>
-
-	<div class="col-md-3">
-		<p><strong>請求情報</strong></p>
-		<table class="table table-bordered">
-			<tr>
-				<td class="active">商品合計</td>
-				<td><%= total %></td>
-			</tr>
-			<tr>
-				<td class="active">配送料</td>
-				<td><%= @order.delivery_fee %></td>
-			</tr>
-			<tr>
-				<td class="active">ご請求額</td>
-				<td><%= @order.total_fee %></td>
-			</tr>
-
-		</table>
-	</div>
-
+    <div class="col-md-6">
+        <p><strong>注文情報</strong></p>
+        <table class="table table-bordered">
+            <tr>
+                <td class="active">注文日</td>
+                <td>
+                    <%= @order.created_at.strftime('%Y/%m/%d') %>
+                </td>
+            </tr>
+            <tr>
+                <td class="active">配送先</td>
+                <td>
+                    <%= @order.postal_code %><br>
+                    <%= @order.address %><br>
+                    <%= @order.name %><br>
+                </td>
+            </tr>
+            <tr>
+                <td class="active">支払い方法</td>
+                <td>
+                    <%= @order.payment %>
+                </td>
+            </tr>
+            <tr>
+                <td class="active">ステータス</td>
+                <td>
+                    <%= @order.order_status %>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-3">
+        <p><strong>請求情報</strong></p>
+        <table class="table table-bordered">
+            <tr>
+                <td class="active">商品合計</td>
+                <td>
+                    <%= total %>
+                </td>
+            </tr>
+            <tr>
+                <td class="active">配送料</td>
+                <td>
+                    <%= @order.delivery_fee %>
+                </td>
+            </tr>
+            <tr>
+                <td class="active">ご請求額</td>
+                <td>
+                    <%= @order.total_fee %>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>
-
 <div class="row">
-	<div class="col-md-8">
-		<p><strong>注文内容</strong></p>
-		<table class="table table-bordered">
-			<thead>
-				<tr class="active">
-					<th class="col-md-8">商品</th>
-					<th class="col-md-2">単価（税込）</th>
-					<th class="col-md-1">個数</th>
-					<th class="col-md-1">小計</th>
-				</tr>
-			</thead>
-			<tbody>
-				<% @order.order_products.each do |order_product|  %>
-					<tr>
-						<td><%= order_product.product.name %></td>
-						<td><%= include_tax(order_product.product.tax_excluded_price).to_i %></td>
-						<td><%= order_product.quantity %></td>
-						<td><%= subtotal = include_tax(order_product.product.tax_excluded_price).to_i * order_product.quantity %></td>
-						<% total += subtotal %>
-					</tr>
-				<% end %>
-			</tbody>
-		</table>
-	</div>
+    <div class="col-md-8">
+        <p><strong>注文内容</strong></p>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="active">
+                    <th class="col-md-8">商品</th>
+                    <th class="col-md-2">単価（税込）</th>
+                    <th class="col-md-1">個数</th>
+                    <th class="col-md-1">小計</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @order.order_products.each do |order_product|  %>
+                <tr>
+                    <td>
+                        <%= order_product.product.name %>
+                    </td>
+                    <td>
+                        <%= include_tax(order_product.product.tax_excluded_price).to_i %>
+                    </td>
+                    <td>
+                        <%= order_product.quantity %>
+                    </td>
+                    <td>
+                        <%= subtotal = include_tax(order_product.product.tax_excluded_price).to_i * order_product.quantity %>
+                    </td>
+                    <% total += subtotal %>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
 </div>
-
-
-
 <%= link_to "戻る", orders_path %>

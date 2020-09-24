@@ -1,37 +1,33 @@
 <br><br>
-<img class="home_img" src="/assets/sweets5.jpg" width="1170" height="250" class="lazyload">
-
+<div id="container">
+        <div id="theTarget">
+            <div style="background-image: url(/assets/sweets5.jpg)"></div>
+            <div style="background-image: url(/assets/sweets6.jpg)"></div>
+            <div style="background-image: url(/assets/sweets1.jpg)"></div>
+            <div style="background-image: url(/assets/sweets4.jpg)"></div>
+            <div style="background-image: url(/assets/sweets3.jpg)"></div>
+        </div>
+</div>
 <div class="top_text">
 ようこそ、NaganoCakeへ！<br>
 このサイトは、ケーキ販売のECサイトになります。<br>
 会員でない方も商品の閲覧はできますが、<br>
 購入には<%=link_to "会員登録",new_member_registration_path %>が必要になります。
 </div>
-
 <h2 class="top_product">オススメ商品</h2>
-<table class="top_product">
-    <td class="top_list">
-      <p><img src="/assets/sweets2.jpg" class="top_img"></p>
-      <p>プリン</p>
-      <p>¥1,000</p>
-    </td>
-    <td class="top_list">
-      <p><img src="/assets/sweets3.jpg" class="top_img"></p>
-      <p>チョコケーキ</p>
-      <p>¥1,000</p>
-    </td>
-    <td class="top_list">
-      <p><img src="/assets/sweets4.jpg" class="top_img"></p>
-      <p>シフォンケーキ</p>
-      <p>¥1,000</p>
-    </td>
-    <td class="top_list">
-      <p><img src="/assets/sweets1.jpg" class="top_img"></p>
-      <p>ショートケーキ</p>
-      <p>¥1,000</p>
-    </td>
-</table>
 
+  <% @products.each do |product| %>
+    <div class="col-xs-2">
+    <%= link_to "/products/#{product.id}" do %>
+      <%= attachment_image_tag(product, :image, :fill,200,200, fallback: "no_image.jpg", size:'150x150') %>
+      <h4><%= product.name %></h4>
+      ¥<%= product.tax_excluded_price %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 <p class="top_index"><%= link_to 'もっと見る＞',"products" %></p>
-
+</div>
+<br><br>
 <%= render 'admins/genres/research', genres: @genres %>
+<br><br><br><br><br>
