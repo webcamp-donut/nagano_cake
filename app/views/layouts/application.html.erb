@@ -14,10 +14,11 @@
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="conteiner">
         <nav class="nav navber-nav navbar-left">
-          <span class="title">ロゴ</span>
+          <p class="title"><%= link_to image_tag('header_rogo2.jpg', :width => '300', :height => '200' ), '/' %></p>
+          <%# <p><a href="/assets/header_rogo.jpg"></a></p> %>
         </nav>
         <nav>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="header_couteiner nav navbar-nav navbar-right">
           <% if admin_signed_in? %>
             <li>
               <%= link_to(admins_products_path) do %>
@@ -99,5 +100,12 @@
        </div>
       </div>
     </body>
+
+    <footer>
+      <div class="footer_font_size">
+        Copyrights (C) 2020 Nagano Cake Co.,Ltd. All Rights Reserved.
+      </div>
+    </footer>
   </body>
+
 </html>
