@@ -1,4 +1,5 @@
 <br><br>
+
 <div id="container">
         <div id="theTarget">
             <div style="background-image: url(/assets/sweets5.jpg)"></div>
@@ -8,26 +9,26 @@
             <div style="background-image: url(/assets/sweets3.jpg)"></div>
         </div>
 </div>
+
 <div class="top_text">
-ようこそ、NaganoCakeへ！<br>
-このサイトは、ケーキ販売のECサイトになります。<br>
-会員でない方も商品の閲覧はできますが、<br>
-購入には<%=link_to "会員登録",new_member_registration_path %>が必要になります。
+  ようこそ、NaganoCakeへ！<br>
+  このサイトは、ケーキ販売のECサイトになります。<br>
+  会員でない方も商品の閲覧はできますが、<br>
+  購入には<%=link_to "会員登録",new_member_registration_path %>が必要になります。
 </div>
+
 <h2 class="top_product">オススメ商品</h2>
 
-  <% @products.each do |product| %>
-    <div class="col-xs-2">
+<% @products.each do |product| %>
+  <div class="col-xs-2">
     <%= link_to "/products/#{product.id}" do %>
       <%= attachment_image_tag(product, :image, :fill,200,200, fallback: "no_image.jpg", size:'150x150') %>
       <h4><%= product.name %></h4>
       ¥<%= product.tax_excluded_price %>
-      <% end %>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+<% end %>
+
 <p class="top_index"><%= link_to 'もっと見る＞',"products" %></p>
-</div>
-<br><br>
+<br>
 <%= render 'admins/genres/research', genres: @genres %>
-<br><br><br><br><br>

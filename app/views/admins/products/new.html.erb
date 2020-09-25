@@ -3,7 +3,10 @@
     <%= form_for @product, url:  admins_products_path(@product), local: true do |f| %>
       <div class="col-sm-5"> 
       <table class="table">
-         <tr height="50"><%= f.attachment_field :image %></tr>
+         <tr height="50">
+         <td><%= attachment_image_tag(@product, :image, :fill,150,150, fallback: "no_image.jpg", size:'100x100',  format: "jpg") %></td>
+         <td><%= f.attachment_field :image %></td>
+         </tr>
          <tr>
             <td width="120" height="80">商品名</td>
             <td><%= f.text_field :name %></td>
@@ -37,5 +40,6 @@
       </div>
     <% end %> 
 
+    
     
     
