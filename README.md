@@ -84,13 +84,17 @@ SNSをキッカケに昨年より注文が殺到するようになった。メ�
     ・注文ステータス(入金待ち/入金済み/発送済み)  
     ・製作ステータス(製作待ち/製作中/製作完了)  
 
-## 使用言語  
+## 言語  
 
 HTML/CSS/Javascript/Ruby/  
 
 ## フレームワーク  
 
 Ruby on rails (5.2.4)  
+
+## Gem  
+
+devise/jquery-rails/pry-rails/refile/refile-mini-magick/bootstrap-sass/kaminari/  
 
 ## 作成者  
 くさかべ　URL  
