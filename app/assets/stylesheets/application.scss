@@ -127,6 +127,7 @@
 }
 .flex_container {
     float: left;
+    margin: auto 10px;
 }
 .pagination>li>a {          
     border: none;
@@ -162,3 +163,12 @@ footer {
     font-family: osaka-mono;
 }
 // 
+// ジャンル検索
+.list_color {
+    color: #777777;
+    background-color: #001100;
+}
+.list_item_color {
+    color: #001100;
+    background-color: #001100;
+}
