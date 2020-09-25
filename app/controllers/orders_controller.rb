@@ -53,6 +53,9 @@ class OrdersController < ApplicationController
     end
       current_member.cart_items.destroy_all
       redirect_to orders_thank_path
+
+    @member = current_member
+    ThanksMailer.thanks_email(@order).deliver_later
   end
 
   def thank

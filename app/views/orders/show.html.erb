@@ -3,7 +3,6 @@
         <h3>注文履歴詳細</h3>
     </div>
 </div>
-<% total = 0 %>
 <div class="row">
     <div class="col-md-6">
         <p><strong>注文情報</strong></p>
@@ -42,7 +41,7 @@
             <tr>
                 <td class="active">商品合計</td>
                 <td>
-                    <%= total %>
+                    <%= @order.total_fee - @order.delivery_fee %>
                 </td>
             </tr>
             <tr>
@@ -87,7 +86,6 @@
                     <td>
                         <%= subtotal = include_tax(order_product.product.tax_excluded_price).to_i * order_product.quantity %>
                     </td>
-                    <% total += subtotal %>
                 </tr>
                 <% end %>
             </tbody>
