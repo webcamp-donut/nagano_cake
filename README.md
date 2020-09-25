@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-NAGANO CAKE　　
+NAGANO CAKE  
 ＃概要と背景
 
 長野県にある小さな洋菓子店『ながのCAKE』の商品通販するためのECサイト 
