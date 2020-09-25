@@ -98,7 +98,7 @@ Ruby on rails (5.2.4)
 devise/jquery-rails/pry-rails/refile/refile-mini-magick/bootstrap-sass/kaminari/dotenv-rails  
 
 ## 作成者  
-くさかべ　https://github.com/taka12natu
-たけ　https://github.com/kodake29
-ひでと　https://github.com/Hideto321
-かみお　https://github.com/takumimzd
+くさかべ　https://github.com/taka12natu  
+たけ　https://github.com/kodake29  
+ひでと　https://github.com/Hideto321  
+かみお　https://github.com/takumimzd  
