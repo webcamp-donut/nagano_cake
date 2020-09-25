@@ -87,7 +87,7 @@ SNSをキッカケに全国から注文が来るようになった。メール�
 
 ## 言語  
 
-HTML/CSS/Javascript/Ruby/  
+HTML/CSS/Javascript/ruby（2.5.7）/  
 
 ## フレームワーク  
 
