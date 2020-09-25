@@ -120,7 +120,7 @@
 // 
 // 商品一覧
 .products_index_margin {
-    margin-top: 50px;
+    margin-top: 10px;
 }
 .jenre_reserch {
     margin-top: 80px;
@@ -161,6 +161,12 @@ footer {
     font-size: 20px;
     margin-top: 30px;
     font-family: osaka-mono;
+}
+.container-fixed {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 0;
+    width: 100%;
 }
 // 
 // ジャンル検索
