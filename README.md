@@ -97,5 +97,3 @@ Ruby on rails (5.2.4)
 たけ　URL  
 ひでと　URL  
 かみお　URL  
-
-Ruby on rails (5.2.4)  
