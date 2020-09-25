@@ -26,6 +26,19 @@ class Members::SessionsController < Devise::SessionsController
   # end
   protected
 
+  def reject_user
+    @member = Member.find_by(email: params[:email].downcase)
+    if @user
+      if (@member.valid_password?(params[:user][:password]) && (@user.active_for_authentication? == false))
+        flash[:error] = "退会済みです。"
+        redirect_to new_member_session_path
+      end
+    else
+      flash[:error] = "必須項目を入力してください。"
+    end
+  end
+
+
   def after_sign_in_path_for(resource)
     root_path
   end

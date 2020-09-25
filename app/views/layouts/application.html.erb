@@ -14,7 +14,7 @@
         <div class="conteiner">
             <div class="row" style="margin-right: 60px">
                 <nav class="nav navber-nav navbar-left">
-                    <span class="title">ロゴ</span>
+                    <p class="title"><%= link_to image_tag('header_rogo2.jpg', :width => '300', :height => '200' ), '/' %></p>
                 </nav>
                 <nav>
                     <ul class="nav navbar-nav navbar-right">
@@ -106,17 +106,23 @@
         </div>
     </header>
 
-    <body>
+    <body style="background-color:#DDDDDD">
 
         <div class="container" style="margin-top: 60px">
-                <% if admin_signed_in? %>
-      <div class="margin" style="margin-top: 40px">
-      <% end%>
+          <% if admin_signed_in? %>
+            <div class="margin" style="margin-top: 40px"></div>
+          <% end%>
             <div class="row">
-                <%= yield %>
+              <%= yield %>
             </div>
         </div>
+
+          <footer class="container-fluid">
+            <div class="footer_font_size">
+              Copyrights (C) 2020 Nagano Cake Co.,Ltd. All Rights Reserved.
+            </div>
+          </footer>
+
     </body>
-</body>
 
 </html>
