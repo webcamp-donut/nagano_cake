@@ -176,8 +176,8 @@ Member.create!([
 ])
 Admin.create!([
 	{
-    email: 'admin@admin',
-    password: 'aaaaaa'
+    email: ENV['ADDRESS'],
+    password: ENV['PASSWORD']
     }
 ])
 
