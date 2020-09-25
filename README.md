@@ -94,7 +94,7 @@ Ruby on rails (5.2.4)
 
 ## Gem  
 
-devise/jquery-rails/pry-rails/refile/refile-mini-magick/bootstrap-sass/kaminari/  
+devise/jquery-rails/pry-rails/refile/refile-mini-magick/bootstrap-sass/kaminari/dotenv-rails  
 
 ## 作成者  
 くさかべ　URL  
