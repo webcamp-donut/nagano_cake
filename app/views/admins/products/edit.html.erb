@@ -1,11 +1,16 @@
 <h2>商品編集</h2><br><br><br>
 
-  <%= form_for @product, url: admins_product_path(@product) do |f| %>
-    <div class="col-sm-5"> 
-    <table class="table">
-        <tr height="50"><%= f.attachment_field :image %><tr>
+<%= form_for @product, url: admins_product_path(@product) do |f| %>
+  <div class="col-sm-5"> 
+     <table class="table">
+        
+        <tr height="50">
+          <td><%= attachment_image_tag @product, :image, class: "img-square", fallback: "no_image.jpg", size:"100x100" %></td>
+          <td><%= f.attachment_field :image, placeholder: "画像" %></td>
+        </tr>
+
         <tr>
-          <td width="120" height="80">商品名</td>
+          <td width="120" height="80">あああ</td>
           <td><%= f.text_field :name %></td>
         </tr>
 
@@ -27,10 +32,8 @@
         <tr>
           <td width="120" height="80">販売ステータス</td>
           <td><%= f.select :sale_status,{ 販売中:"販売中", 売切れ:"売切れ"} %></td>
-        </tr>   
-    </table>
-    <%= f.submit '変更を保存',class: 'btn btn-primary' %>
-    </div>
-  <% end %>
-  
-  
+        </tr>
+     </table>
+     <%= f.submit '変更を保存',class: 'btn btn-primary' %>
+  </div>
+<% end %>

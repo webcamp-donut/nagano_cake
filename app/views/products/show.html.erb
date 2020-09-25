@@ -16,14 +16,16 @@
                 <%= include_tax(@product.tax_excluded_price).to_i %><small>(税込)</small></h3>
             <div class="row" , style="margin-top: 30px;">
                 <%= form_for(@cart_item, url: cart_items_path, html: {method: "post"}) do |f| %>
-                <div class="col-md-5 col-md-offset-2">
-                    <%= f.select :quantity, options_for_select((1..10).to_a), {}, {class: "form-control col-xs-2"} %>
-                </div>
-                <div class="col-md-5">
-                    <%= f.submit "カートに入れる", class: "btn btn-primary" %>
-                </div>
-                <%= f.hidden_field :member_id, :value => current_member.id %>
-                <%= f.hidden_field :product_id, :value => @product.id %>
+                    <div class="col-md-5 col-md-offset-2">
+                        <%= f.select :quantity, options_for_select((1..10).to_a), {}, {class: "form-control col-xs-2"} %>
+                    </div>
+                    <div class="col-md-5">
+                        <%= f.submit "カートに入れる", class: "btn btn-primary" %>
+                    </div> 
+                    <% if member_signed_in? %>
+                        <%= f.hidden_field :member_id, :value => current_member.id %>
+                        <%= f.hidden_field :product_id, :value => @product.id %>
+                    <% end %>
                 <% end %>
             </div>
         </div>
