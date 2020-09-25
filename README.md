@@ -28,6 +28,7 @@ Things you may want to cover:
 ## トップページ
 
 <img width="1000" alt="スクリーンショット 2020-09-25 18 30 56" src="https://user-images.githubusercontent.com/67743439/94252227-99c42a00-ff5e-11ea-86f1-722f5c19b6c2.png">  
+
 ## 概要と背景
 
 長野県にある小さな洋菓子店『ながのCAKE』の商品通販するためのECサイト  
