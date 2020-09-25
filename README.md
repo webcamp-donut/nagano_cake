@@ -32,7 +32,7 @@ SNSをキッカケに昨年より注文が殺到するようになった。メ�
 
 ## トップページ
 
-<img width="1440" alt="スクリーンショット 2020-09-25 18 30 56" src="https://user-images.githubusercontent.com/67743439/94252227-99c42a00-ff5e-11ea-86f1-722f5c19b6c2.png">
+<img width="1000" alt="スクリーンショット 2020-09-25 18 30 56" src="https://user-images.githubusercontent.com/67743439/94252227-99c42a00-ff5e-11ea-86f1-722f5c19b6c2.png">
 
 ## 使い方  
 
