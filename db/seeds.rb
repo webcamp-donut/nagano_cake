@@ -9,19 +9,19 @@
 Genre.create!([
 	{
     name: 'ケーキ',
-    status: '表示'
+    status: 1
     },
     {
     name: 'プリン',
-    status: '表示'
+    status: 1
     },
     {
     name: 'タルト',
-    status: '表示'
+    status: 1
     },
     {
     name: '焼き菓子',
-    status: '表示'
+    status: 1
     }
 ])
 
