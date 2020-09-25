@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-# H1 NAGANO CAKE  
+#  NAGANO CAKE  
 
 ＃概要と背景
 
