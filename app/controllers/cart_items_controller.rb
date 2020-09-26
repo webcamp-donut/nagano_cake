@@ -20,10 +20,15 @@ class CartItemsController < ApplicationController
   def create
     if member_signed_in?
       @cart_item = current_member.cart_items.new(cart_item_params)
-      @cart_item.save
-      redirect_to cart_items_path
+      item = CartItem.find_by(product_id: @cart_item.product_id)
+      if item
+        redirect_to request.referer, alert: "※既にカートに入っています"
+      else
+        @cart_item.save
+        redirect_to cart_items_path
+      end
     else
-      redirect_to request.referer, alert: "※ログインして下さい"
+       redirect_to request.referer, alert: "※ログインして下さい"
     end
   end
 
