@@ -16,7 +16,7 @@ Genre.create!([
     status: 1
     },
     {
-    name: 'タルト',
+    name: 'キャンディ',
     status: 1
     },
     {
@@ -76,27 +76,27 @@ Product.create!([
     },
 	{
     genre_id: 3,
-    name: 'フルーツタルト',
+    name: '瓶詰め合わせキャンディ',
     explanation: '美味しい',
     tax_excluded_price: '550',
     sale_status: 0,
-    image: File.open('./app/assets/images/tart-fruit.jpg')
+    image: File.open('./app/assets/images/candy-bin.jpg')
     },
 	{
     genre_id: 3,
-    name: 'チョコレートタルト',
+    name: 'アイスキャンディ',
     explanation: '美味しい',
-    tax_excluded_price: '2200',
+    tax_excluded_price: '300',
     sale_status: 0,
-    image: File.open('./app/assets/images/tart-chocolate.jpg')
+    image: File.open('./app/assets/images/candy-ice.jpg')
     },
     {
     genre_id: 3,
-    name: 'ストロベリータルト',
+    name: 'ハート型キャンディ',
     explanation: '美味しい',
-    tax_excluded_price: '1200',
+    tax_excluded_price: '600',
     sale_status: 0,
-    image: File.open('./app/assets/images/tart-strawberry.jpg')
+    image: File.open('./app/assets/images/candy-heart.jpg')
     },
 	{
     genre_id: 4,
@@ -176,8 +176,8 @@ Member.create!([
 ])
 Admin.create!([
 	{
-    email: 'admin@admin',
-    password: 'aaaaaa'
+    email: ENV['ADDRESS'],
+    password: ENV['PASSWORD']
     }
 ])
 

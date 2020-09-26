@@ -51,6 +51,18 @@
      padding-top: 40px;
      margin: auto 100px;
  }
+//  メンバー新規登録画面
+.actions_new {
+    margin: 15px auto;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+}
+.new_registration_position {
+    position: absolute;
+    top: 60%;
+}
+// 
 //  マイページ
  .member_show_edit_button {
      padding-left: 20px;
@@ -120,7 +132,7 @@
 // 
 // 商品一覧
 .products_index_margin {
-    margin-top: 10px;
+    margin-top: 15px;
 }
 .jenre_reserch {
     margin-top: 80px;
@@ -129,11 +141,26 @@
     float: left;
     margin: auto 10px;
 }
-.pagination>li>a {          
+.pagination {          
     border: none;
     color: #696969;
+    // margin-left: 30%;
+    position: absolute;
+    bottom: 15%;
+    left: 45%;
   }
-  
+//   商品新規登録
+.products_position {
+    padding-top: 20px;
+}
+.margin_top_bottom {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.new_production_botton {
+    padding-top: 30px;
+}
+// 
   /* 表示しているページ番号のデザイン */
   .pagination>.active>a {     
     background: #777777;     /*背景の色を変える*/
@@ -155,7 +182,7 @@ footer {
     color: #777777;
     text-align: center;
     border-top-style: solid;
-    background-color: #001100;
+    background-color: #222222;
 }
 .footer_font_size {
     font-size: 20px;

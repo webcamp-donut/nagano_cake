@@ -18,7 +18,8 @@
 //= require_tree .
 
 $(function(){
-  $("document").ready(function() {
+  // $("document").ready(function() {
+    $(document).on('turbolinks:load', function() {
    
   // オプションを指定してSkipprの実行
   $("#theTarget").skippr({
