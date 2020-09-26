@@ -1,8 +1,8 @@
 
 <div class="row">
-<div class="col-lg-3"></div>
+<div class="col-lg-4"></div>
 <div class="col-lg-4" style="margin-top:80px">
-  <h5>会員の方はこちらからログイン</h5>
+  <h3>会員の方はこちらからログイン</h3>
 </div>
 </div>
 
@@ -39,7 +39,7 @@
 
   <h5 class="sign_up_link">登録がお済みでない方</h5>
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-    <%= link_to "こちら", new_registration_path(resource_name) %>　から新規登録を行ってください。
+    <%= link_to "こちら", new_registration_path(resource_name) %> から新規登録を行ってください。
   <% end %>
 
   <%# <h5 style="margin-top:50px">登録がお済みでない方</h5> %>
@@ -47,6 +47,6 @@
     <%# <%= link_to "こちら", new_registration_path(resource_name) %>
   <%# <% end %>
 <% end %>
-
+</div>
 
 <%# <%= render "members/shared/links" %>

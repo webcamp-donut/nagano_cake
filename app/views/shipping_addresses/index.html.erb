@@ -1,9 +1,9 @@
-<%= render 'layouts/error_messages', model: @shipping_address %>
 <div class="row">
     <div class="col-md-11 colmd-offset-1">
         <h3>配送先登録一覧</h3>
     </div>
 </div>
+<%= render 'layouts/error_messages', model: @shipping_address %>
 <div class="row">
     <div class="form-horizontal" role="form">
         <%= form_for @shipping_address do |f| %>
