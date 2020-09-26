@@ -70,4 +70,5 @@ gem "refile-mini_magick"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'kaminari','~> 1.2.1'
 gem 'dotenv-rails'
+gem 'rails-i18n'
 
