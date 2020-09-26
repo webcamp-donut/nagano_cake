@@ -21,12 +21,18 @@ class OrdersController < ApplicationController
           @order.postal_code = @shipping_address.postal_code
           @order.address = @shipping_address.address
           @order.name = @shipping_address.name
+       else
+        redirect_to new_order_path
        end
     else
+       if present?
+          redirect_to new_order_path
+       else
           @order.postal_code = params[:postal_code]
           @order.address = params[:address]
           @order.name = params[:name]
           session[:new_address] = "new_address"
+       end
     end
   end
 
