@@ -13,7 +13,7 @@
       <tr>
       <% @products.each do |product| %>
         <td><%= product.id %></td>
-        <td><%= link_to product.name, "products/#{product.id}" %></td>
+        <td><%= link_to product.name, "/admins/products/#{product.id}" %></td>
         <td>¥<%= product.tax_excluded_price %>(税抜)</td>
         <td><%=product.genre.name %></td>
         <td><%= product.sale_status %></td>
