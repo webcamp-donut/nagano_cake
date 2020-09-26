@@ -1,6 +1,6 @@
 <br><br>
 
-<div id="container">
+<div class="top_container">
         <div id="theTarget">
             <div style="background-image: url(/assets/sweets5.jpg)"></div>
             <div style="background-image: url(/assets/sweets6.jpg)"></div>
@@ -9,9 +9,9 @@
             <div style="background-image: url(/assets/sweets3.jpg)"></div>
         </div>
 </div>
-<div>
+
 <%= render 'admins/genres/research', genres: @genres %>
-<div class="top_text" style="text-align: center;">
+<div class="top_text">
   ようこそ、NaganoCakeへ！<br>
   このサイトは、ケーキ販売のECサイトになります。<br>
   会員でない方も商品の閲覧はできますが、<br>
@@ -29,9 +29,7 @@
     <% end %>
   </div>
 <% end %>
-
 <p class="top_index"><%= link_to 'もっと見る＞',"products" %></p>
-
 <br>
 
 <br><br><br><br>

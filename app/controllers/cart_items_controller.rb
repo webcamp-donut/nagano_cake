@@ -1,5 +1,5 @@
 class CartItemsController < ApplicationController
-
+  before_action :authenticate_member!
   def index
     @cart_items = current_member.cart_items
     @products = Product.where(params[:product_id])
@@ -18,9 +18,18 @@ class CartItemsController < ApplicationController
   end
 
   def create
-    @cart_item = current_member.cart_items.new(cart_item_params)
-    @cart_item.save
-    redirect_to cart_items_path
+    if member_signed_in?
+      @cart_item = current_member.cart_items.new(cart_item_params)
+      item = CartItem.find_by(product_id: @cart_item.product_id)
+      if item
+        redirect_to request.referer, alert: "※既にカートに入っています"
+      else
+        @cart_item.save
+        redirect_to cart_items_path
+      end
+    else
+       redirect_to request.referer, alert: "※ログインして下さい"
+    end
   end
 
   def reset

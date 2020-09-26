@@ -1,40 +1,42 @@
+<<<<<<< HEAD
 <%= render 'layouts/error_messages', model: @product %>
 <h2>商品編集</h2><br><br><br>
+=======
+<h2>商品編集</h2>
+>>>>>>> origin/develop
 
 <%= form_for @product, url: admins_product_path(@product) do |f| %>
-  <div class="col-sm-5"> 
-     <table class="table">
-        
-        <tr height="50">
-          <td><%= attachment_image_tag @product, :image, class: "img-square", fallback: "no_image.jpg", size:"100x100" %></td>
-          <td><%= f.attachment_field :image, placeholder: "画像" %></td>
-        </tr>
 
+    <div class="col-lg-4">
+      <%= attachment_image_tag @product, :image, class: "img-square", fallback: "no_image.jpg", size:"300x300" %>
+      <%= f.attachment_field :image, placeholder: "画像" %>
+    </div>
+     <table class="col-lg-8">
         <tr>
-          <td width="120" height="80">商品名</td>
-          <td><%= f.text_field :name %></td>
-        </tr>
+            <td class="margin_top_bottom">商品名</td>
+            <td><%= f.text_field :name %></td>
+         </tr>
+         <tr>
+            <td class="margin_top_bottom">商品説明</td>
+            <td><%= f.text_area :explanation, size:'20x8' %></td>
+         </tr>
 
-        <tr>
-          <td width="120" height="80">商品説明</td>
-          <td><%= f.text_area :explanation %></td>
-        </tr>
+         <tr>
+            <td class="margin_top_bottom">ジャンル</td>
+            <td><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: true %></td>
+         </tr>
 
-        <tr>
-          <td width="120" height="80">ジャンル</td>
-          <td><%= f.collection_select :genre_id, Genre.all, :id, :name %></td>
-        </tr>
+         <tr>
+            <td class="margin_top_bottom">税抜価格</td>
+            <td><%= f.text_field :tax_excluded_price %>円</td>
+         </tr>
 
-        <tr>
-          <td width="120" height="80">税抜価格</td>
-          <td><%= f.text_field :tax_excluded_price %>円</td>
-        </tr>
-
-        <tr>
-          <td width="120" height="80">販売ステータス</td>
-          <td><%= f.select :sale_status,{ 販売中:"販売中", 売切れ:"売切れ"} %></td>
-        </tr>
+         <tr">
+            <td class="margin_top_bottom">販売ステータス</td>
+            <td><%= f.select :sale_status,{ 販売中:"販売中", 売切れ:"売切れ"} %></td>
+         </tr>
+         <tr>
+            <td class="new_production_botton"><%= f.submit '変更を保存',class: 'btn btn-primary' %></td>
+         </tr>
      </table>
-     <%= f.submit '変更を保存',class: 'btn btn-primary' %>
-  </div>
 <% end %>

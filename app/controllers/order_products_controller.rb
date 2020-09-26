@@ -1,4 +1,5 @@
 class OrderProductsController < ApplicationController
+  before_action :authenticate_member!
   def update
     @order = Order.find(params[:id])
     @order_product = OrderProduct.find(params[:id])
