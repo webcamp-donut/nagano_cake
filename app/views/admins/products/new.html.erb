@@ -1,11 +1,11 @@
 <h2>商品新規登録</h2><br><br><br>
 
-    <%= form_for @product, url:  admins_products_path(@product), local: true do |f| %>
-      <div class="col-sm-5"> 
+<%= form_for @product, url:  admins_products_path(@product), local: true do |f| %>
+    <div class="col-sm-5"> 
       <table class="table">
          <tr height="50">
-         <td><%= attachment_image_tag(@product, :image, :fill,150,150, fallback: "no_image.jpg", size:'100x100',  format: "jpg") %></td>
-         <td><%= f.attachment_field :image %></td>
+            <td><%= attachment_image_tag(@product, :image, :fill,150,150, fallback: "no_image.jpg", size:'100x100',  format: "jpg") %></td>
+            <td><%= f.attachment_field :image %></td>
          </tr>
          <tr>
             <td width="120" height="80">商品名</td>
@@ -31,14 +31,10 @@
             <td width="120" height="80">販売ステータス</td>
             <td><%= f.select :sale_status,{ 販売中:"販売中", 売切れ:"売切れ"} %></td>
          </tr>
-
-         <tr>
-            <td width="120" height="80"><%= f.submit '新規登録',class: 'btn btn-primary' %></td>
-         </tr>
-
       <table>
-      </div>
-    <% end %> 
+      <%= f.submit '新規登録',class: 'btn btn-primary' %>
+   </div>
+<% end %> 
 
     
     
