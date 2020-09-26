@@ -21,13 +21,17 @@
                     </div>
                     <div class="col-md-5">
                         <%= f.submit "カートに入れる", class: "btn btn-primary" %>
-                    </div> 
+                    </div>
                     <% if member_signed_in? %>
                         <%= f.hidden_field :member_id, :value => current_member.id %>
                         <%= f.hidden_field :product_id, :value => @product.id %>
                     <% end %>
                 <% end %>
             </div>
+                                 <% if flash[:alert] %>
+                <div class="cart_alert"><%= alert %></div>
+            <% end %>
+
         </div>
     </div>
 </div>

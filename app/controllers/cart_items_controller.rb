@@ -18,9 +18,13 @@ class CartItemsController < ApplicationController
   end
 
   def create
-    @cart_item = current_member.cart_items.new(cart_item_params)
-    @cart_item.save
-    redirect_to cart_items_path
+    if member_signed_in?
+      @cart_item = current_member.cart_items.new(cart_item_params)
+      @cart_item.save
+      redirect_to cart_items_path
+    else
+      redirect_to request.referer, alert: "※ログインして下さい"
+    end
   end
 
   def reset
