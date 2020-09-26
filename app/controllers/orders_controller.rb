@@ -17,10 +17,11 @@ class OrdersController < ApplicationController
           @order.name = current_member.last_name + current_member.first_name
     elsif @select_address == "registered_address"
           @address_number = params[:address_number]
-          @shipping_address = ShippingAddress.find(@address_number)
+       if @shipping_address = ShippingAddress.find_by(@address_number)
           @order.postal_code = @shipping_address.postal_code
           @order.address = @shipping_address.address
           @order.name = @shipping_address.name
+       end
     else
           @order.postal_code = params[:postal_code]
           @order.address = params[:address]
