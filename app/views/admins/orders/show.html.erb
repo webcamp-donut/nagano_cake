@@ -7,6 +7,11 @@
 </div><br>
 
 <div class="row">
+  <p class="col-xs-2">購入日</p>
+  <%= @order.member.created_at.to_s(:datetime_jp) %></p>
+</div><br>
+
+<div class="row">
   <p class="col-xs-2">配送先</p>
   <%= @order.address %>
 </div><br>
