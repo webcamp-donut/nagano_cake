@@ -1,5 +1,6 @@
 class CartItemsController < ApplicationController
-  before_action :authenticate_member!
+  before_action :authenticate_member!, except: [:create]
+
   def index
     @cart_items = current_member.cart_items
     @products = Product.where(params[:product_id])
