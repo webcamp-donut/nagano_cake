@@ -7,12 +7,13 @@
         <tr>
             <td>
                 <%= link_to(member_path) do %>
-                <button class="dont_withdrawel btn btn-info">退会しない</button>
+                <button class="dont_withdrawel btn btn-primary">退会しない</button>
                 <% end %>
             </td>
             <td>
                 <%= link_to(members_withdraw_path, method: :patch) do %>
                 <button class="comfirm_withdrawel btn btn-danger ">退会する</button>
+                <script>alert('Hello World');</script>
                 <% end %>
             </td>
         </tr>

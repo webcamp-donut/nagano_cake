@@ -7,7 +7,6 @@ class ProductsController < ApplicationController
   end
 
   def index
-
     @genres = Genre.where(status: 1)
     @products = Product.page(params[:page]).reverse_order.where(sale_status: 0, genre_id: @genres)
     @all_products = Product.where(sale_status: 0, genre_id: @genres)

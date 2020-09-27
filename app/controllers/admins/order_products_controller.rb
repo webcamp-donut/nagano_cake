@@ -1,5 +1,7 @@
 class Admins::OrderProductsController < ApplicationController
+  before_action :authenticate_admin!
   def update
+      @order = Order.find(params[:id])
       @order_product = OrderProduct.find(params[:id])
       @order_products = OrderProduct.where(params[:order_id])
        @order_product.update(order_product_params)
@@ -13,8 +15,7 @@ class Admins::OrderProductsController < ApplicationController
                  @order_product.order.update(order_status: 4)
               end
            end
-
-      redirect_to admins_orders_path
+          redirect_back(fallback_location: root_path)
   end
 
   private

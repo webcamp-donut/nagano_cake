@@ -67,15 +67,15 @@
 <table>
     <tr>
       <td><big>商品合計</td>
-      <td>　　<%= total %>円</big></td>
+      <td><%= total %>円</big></td>
     </tr>
     <tr>
-      <td><big>送料</td>　
-      <td>　　<%= @order.delivery_fee %>円</big></td>
+      <td><big>送料</td>
+      <td><%= @order.delivery_fee %>円</big></td>
     </tr>
     <tr>
-      <td><big>請求金額合計</td>　
-      <td>　　<%= total + @order.delivery_fee.to_i%>円</big></td>
+      <td><big>請求金額合計</td>
+      <td><%= total + @order.delivery_fee.to_i%>円</big></td>
     </tr>
 </table>
 </big>

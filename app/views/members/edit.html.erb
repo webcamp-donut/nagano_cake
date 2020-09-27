@@ -1,4 +1,5 @@
 <h3 class="member_edit">登録情報編集</h3>
+<%= render "members/shared/error_messages", resource: @member %>
 <%= form_for(@member) do |f| %>
 
         <table class="mamber_edit_table">
