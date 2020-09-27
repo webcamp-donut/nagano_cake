@@ -13,14 +13,15 @@
     <header class="navbar navbar-fixed-top navbar-inverse">
         <div class="conteiner">
             <div class="row" style="margin-right: 60px">
-                <nav class="nav navber-nav navbar-left">
-                    <p class="title">
-                        <%= link_to image_tag('header_rogo2.jpg', :width => '300', :height => '200' ), '/' %>
-                    </p>
-                </nav>
+                
                 <nav>
                     <ul class="nav navbar-nav navbar-right">
                         <% if admin_signed_in? %>
+                        <nav class="nav navber-nav navbar-left">
+                            <p class="title">
+                              <%= link_to image_tag('header_rogo2.jpg', :width => '300', :height => '200' ), '/admins' %>
+                            </p>
+                        </nav>
                         <li>
                             <%= link_to(admins_products_path) do %>
                             <button type="button" class="btn btn-secondary">商品一覧</button>
@@ -47,6 +48,11 @@
                             <% end %>
                         </li>
                         <% elsif member_signed_in? %>
+                        <nav class="nav navber-nav navbar-left">
+                            <p class="title">
+                                <%= link_to image_tag('header_rogo2.jpg', :width => '300', :height => '200' ), '/' %>
+                            </p>
+                         </nav>
                         <li>
                             <p class="welcome">ようこそ、
                                 <%= current_member.last_name%>
@@ -73,6 +79,11 @@
                             <% end %>
                         </li>
                         <% else %>
+                        <nav class="nav navber-nav navbar-left">
+                            <p class="title">
+                                <%= link_to image_tag('header_rogo2.jpg', :width => '300', :height => '200' ), '/' %>
+                            </p>
+                         </nav>
                         <li>
                             <%= link_to(about_path) do %>
                             <button type="button" class="btn btn-secondary">About</button>
