@@ -35,9 +35,16 @@ class Member < ApplicationRecord
                            message: "ハイフンなしで入力して下さい"
                                       }
 
-   def active_for_authentication?
+  def active_for_authentication?
     super && (self.withdrawal_status == 1)
   end
 
+  def self.search(search)
+    if search
+      @member = Member.where(['first_name LIKE? OR last_name LIKE?',"%#{search}%", "%#{search}%"])
+    else
+      Member.all
+    end
+  end
 
 end

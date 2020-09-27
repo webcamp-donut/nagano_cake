@@ -1,3 +1,5 @@
+<% if @flg == 1  %>
+
 <h2>検索結果<small>(全<%= @products.count %>件)</small></h2>
 
 <%= link_to "+", new_admins_product_path, class: 'btn btn-default btn-lg pull-right' %>
@@ -19,4 +21,48 @@
         <td><%= product.sale_status %></td>
       </tr>
     <% end %>
+    <%= paginate @products %>
   </table>
+
+<% elsif @flg == 2  %>
+
+<h2>検索結果<small>(全<%= @members.count %>件)</small></h2>
+<h2>会員一覧</h2>
+<table class="table table-striped">
+    <tr>
+        <th>会員ID</th>
+        <th>氏名</th>
+        <th>メールアドレス</th>
+        <th>ステータス</th>
+    </tr>
+    <% @members.each do |member| %>
+    <tr>
+        <td>
+            <%= member.id%>
+        </td>
+        <td>
+            <%= link_to admins_member_path(member.id) do %>
+            <%= member.last_name %>
+            <%= member.first_name %>
+            <% end %>
+        </td>
+        <td>
+            <%= member.email %>
+        </td>
+        <td>
+            <% if member.withdrawal_status == 1 %>
+            <p>有効</p>
+            <% else %>
+            <p>退会済</p>
+            <% end %>
+        </td>
+    </tr>
+    <% end %>
+    <%= paginate @members %>
+</table>
+
+<% else  %>
+
+<h2>検索結果<small>(全0件)</small></h2>
+<h4>"<%= params[:search] %>"に該当するデータは見つかりませんでした。</h4>
+<% end %>
