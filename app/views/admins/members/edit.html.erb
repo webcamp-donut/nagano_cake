@@ -1,6 +1,6 @@
 
  <h2><%= @member.last_name %><%= @member.first_name %>さんの会員情報編集</h2>
-
+<%= render "members/shared/error_messages", resource: @member %>
 <div class="row">
   <p class="col-xs-2">会員ID</p>
   <%= @member.id %>
@@ -10,14 +10,14 @@
 
 <div class="row">
   <p class="col-xs-2"><%= f.label :名前 %></p>
-  <%= f.text_field :last_name %>
-  <%= f.text_field :first_name %>
+  <div class="col-xs-1"><%= f.text_field :last_name %></div>
+  <div class="col-xs-1" style="margin-left:60px;"><%= f.text_field :first_name %></div>
 </div><br>
 
 <div class="row">
 <p class="col-xs-2"><%= f.label :フリガナ %></p>
-<%= f.text_field :kana_last_name %>
-<%= f.text_field :kana_first_name %>
+<div class="col-xs-1"><%= f.text_field :kana_last_name %></div>
+<div class="col-xs-1" style="margin-left:60px;"><%= f.text_field :kana_first_name %></div>
 </div><br>
 
 <div class="row">

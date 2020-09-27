@@ -9,7 +9,7 @@
       if @member.update(member_params)
         redirect_to admins_member_path(@member)
       else
-        render
+        render :edit
       end
     end
 
