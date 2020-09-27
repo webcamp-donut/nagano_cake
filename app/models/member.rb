@@ -22,9 +22,18 @@ class Member < ApplicationRecord
                            message: "全角カタカナのみで入力して下さい"
                                       }
 
-  validates :postal_code, presence: true
+  validates :postal_code, presence: true,
+                              format: {
+                              with: /\A\d{7}\z/,
+                           message: "ハイフンなしで入力して下さい"
+                                      }
+
   validates :address, presence: true
-  validates :phone, presence: true
+  validates :phone, presence: true,
+                              format: {
+                              with: /\A\d{10,11}\z/,
+                           message: "ハイフンなしで入力して下さい"
+                                      }
 
    def active_for_authentication?
     super && (self.withdrawal_status == 1)
