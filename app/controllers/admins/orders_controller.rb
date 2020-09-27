@@ -1,12 +1,17 @@
 class Admins::OrdersController < ApplicationController
 
 	def top
-		@dd = Date.today.all_day
 		@today_orders = Order.where(created_at: Date.today.all_day)
 	end
 
 	def index
-		@orders = Order.page(params[:page]).reverse_order
+		if params[:type] == 'today'
+			@orders = Order.where(created_at: Date.today.all_day).page(params[:page]).reverse_order
+		elsif params[:type] == 'member'
+			@orders = Order.where(member_id: params[:member_id]).page(params[:page]).reverse_order
+		else
+			@orders = Order.page(params[:page]).reverse_order
+		end
 	end
 
 	def show
