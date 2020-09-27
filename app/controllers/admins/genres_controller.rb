@@ -2,7 +2,7 @@ class Admins::GenresController < ApplicationController
 	before_action :authenticate_admin!
   def index
   	@genre = Genre.new
-		@genres = Genre.page(params[:page]).reverse_order
+		@genres = Genre.all
   end
 
   def edit
@@ -19,7 +19,7 @@ class Admins::GenresController < ApplicationController
   end
 
   def create
-    @genres = Genre.page(params[:page]).reverse_order
+    @genres = Genre.all
   	@genre = Genre.new(genre_params)
   	@genre_status = params[:status]
   	if @genre.save
