@@ -40,19 +40,19 @@
     <tr>
         <td>商品合計</td>
         <td>
-            <%= @order.total_fee - @order.delivery_fee %>
+            <%= @order.total_fee - @order.delivery_fee %> 円
         </td>
     </tr>
     <tr>
         <td>配送料</td>
         <td>
-            <%= @order.delivery_fee %>
+            <%= @order.delivery_fee %> 円
         </td>
     </tr>
     <tr>
         <td>ご請求額</td>
         <td>
-            <%= @order.total_fee %>
+            <%= @order.total_fee %> 円
         </td>
     </tr>
 </table>
@@ -77,10 +77,8 @@
             <%= @order.payment %>
         </td>
     </tr>
-    <tr>
-        <td>ステータス</td>
-        <td>
-            <%= @order.order_status %>
-        </td>
-    </tr>
 </table>
+
+<p>この度は「ながのCAKE」にてお買い物いただき、誠にありがとうございました。またのご利用を心よりお待ちしております。</p>
+
+<p><strong>ながのCAKE</strong></p>
