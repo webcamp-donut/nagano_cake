@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
         redirect_to new_order_path
        end
     else
-       if present?
+       if params[:postal_code].blank? || params[:address].blank? || params[:name].blank?
           redirect_to new_order_path
        else
           @order.postal_code = params[:postal_code]
@@ -86,5 +86,3 @@ private
   end
 
 end
-
-# <%= f.label(:address, "ご自身の住所", {value: :member_address, style: "display: inline-block;"} ) %>
