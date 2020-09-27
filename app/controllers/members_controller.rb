@@ -26,7 +26,7 @@ class MembersController < ApplicationController
     @member = current_member
     @member.update(withdrawal_status: 2)
     reset_session
-    redirect_to new_member_registration_path
+    redirect_to "/"
   end
 
 
