@@ -71,4 +71,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'kaminari','~> 1.2.1'
 gem 'dotenv-rails'
 gem 'rails-i18n'
-
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
