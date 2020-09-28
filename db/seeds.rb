@@ -132,9 +132,9 @@ Member.create!([
     first_name: '太郎',
     kana_last_name: 'ヤマダ',
     kana_first_name: 'タロウ',
-    postal_code: '111-1111',
+    postal_code: '1111111',
     address: '東京都渋谷区神南1-1-1',
-    phone: '080-111-1111',
+    phone: '0801111111',
     withdrawal_status: 1
     },
     {
@@ -144,9 +144,9 @@ Member.create!([
     first_name: '次郎',
     kana_last_name: 'サトウ',
     kana_first_name: 'ジロウ',
-    postal_code: '222-2222',
+    postal_code: '2222222',
     address: '東京都渋谷区神南2-2-2',
-    phone: '080-222-2222',
+    phone: '0802222222',
     withdrawal_status: 1
     },
     {
@@ -156,9 +156,9 @@ Member.create!([
     first_name: '花子',
     kana_last_name: 'ナカムラ',
     kana_first_name: 'ハナコ',
-    postal_code: '333-3333',
+    postal_code: '3333333',
     address: '東京都渋谷区神南3-3-3',
-    phone: '080-333-3333',
+    phone: '0803333333',
     withdrawal_status: 1
     },
     {
@@ -168,9 +168,9 @@ Member.create!([
     first_name: '敦子',
     kana_last_name: 'ハヤシ',
     kana_first_name: 'アツコ',
-    postal_code: '4444-4444',
+    postal_code: '4444444',
     address: '東京都渋谷区神南4-4-4',
-    phone: '080-444-4444',
+    phone: '0804444444',
     withdrawal_status: 1
     }
 ])
