@@ -1,0 +1,30 @@
+<%= render 'layouts/error_messages', model: @genre %>
+<h2>ジャンル一覧・追加</h2><br><br><br>
+
+<%= form_with model: [:admins, @genre], local: true do |f| %>
+	  　<%= f.label :name, "ジャンル" %>
+    <%= f.text_field :name %>　
+    <%= f.radio_button :status, :表示, :checked => true %>
+    <%= f.label :status, "表示" %>　
+    <%= f.radio_button :status, :非表示, :checked => false %>
+		<%= f.label :status, "非表示" %>　
+		<%= f.submit "追加",class: 'btn btn-primary' %>
+<% end %>
+<br><br>
+<div class="col-sm-5">
+ <table class="table table-striped">
+			<tr>
+				<th>ジャンル</th>
+				<th>状態</th>
+				<th></th>
+			</tr>
+		<% @genres.each do |genre| %>
+			<tr>
+				<td><%= genre.name %></td>
+				<td><%=  genre.status %></td>
+				<td><%= link_to "編集する", edit_admins_genre_path(genre), class: 'btn btn-primary' %></td>
+			</tr>
+		<% end %>
+
+ </table>
+</div>

@@ -1,0 +1,33 @@
+<%= render 'layouts/error_messages', model: @shipping_address %>
+<div class="row">
+    <div class="col-md-11 colmd-offset-1">
+        <h3>配送先編集</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="form-horizontal" role="form">
+        <%= form_for @shipping_address do |f| %>
+        <div class="form-group">
+            <%= f.label :postal_code, "郵便番号（ハイフンなし）", class: "control-label col-md-2" %>
+            <div class="col-md-4">
+                <%= f.text_field :postal_code, class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :address, "住所", class: "control-label col-md-2" %>
+            <div class="col-md-6">
+                <%= f.text_field :address, class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group text-left">
+            <%= f.label :name, "宛名", class: "control-label col-md-2" %>
+            <div class="col-md-4">
+                <%= f.text_field :name, class: "form-control" %>
+            </div>
+            <div class="col-md-offset-2 col-md-3">
+                <%= f.submit "編集する", class: "btn btn-primary" %>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>

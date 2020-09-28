@@ -1,0 +1,6 @@
+<h2>管理者画面</h2>
+<br><br>
+<%= link_to admins_orders_path(type: 'today') do %>
+<h3>本日の注文件数　　　　　<%= @today_orders.count %> 件</h3>
+<% end %>
+

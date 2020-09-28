@@ -1,0 +1,30 @@
+<h2>商品詳細</h2><br><br><br>
+<%= flash[:success] %>
+<div class="col-sm-5">
+<table class="table table-striped">
+  <tr><td><%= attachment_image_tag(@product, :image, :fill,150,150, fallback: "no_image.jpg", size:'150x150',  format: "jpg") %></td></tr>
+  <tr>
+  <td width="150" height="50">商品名</td>
+  <td><%= @product.name %></td>
+  </tr>
+  <tr>
+  <td width="150" height="50">商品説明</td>
+  <td><%= @product.explanation %></td>
+  </tr>
+  <tr>
+  <td width="150" height="50">ジャンル</td>
+  <td><%=@product.genre.name %></td>
+  </tr>
+  <tr>
+  <td width="150" height="50">税込価格(税抜金額)</td>
+  <td><%= include_tax(@product.tax_excluded_price).to_i %>(<%= @product.tax_excluded_price %>)円</td>
+  </tr>
+  <tr>
+  <td width="150" height="50">販売ステータス</td>
+  <td><%= @product.sale_status %></td>
+  </tr>
+  
+</table>
+<%= link_to "編集する", edit_admins_product_path(@product),class: 'btn btn-primary' %>
+</div>
+

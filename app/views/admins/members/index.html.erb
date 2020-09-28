@@ -1,0 +1,33 @@
+<h2>会員一覧</h2>
+<table class="table table-striped">
+    <tr>
+        <th>会員ID</th>
+        <th>氏名</th>
+        <th>メールアドレス</th>
+        <th>ステータス</th>
+    </tr>
+    <% @members.each do |member| %>
+    <tr>
+        <td>
+            <%= member.id%>
+        </td>
+        <td>
+            <%= link_to admins_member_path(member.id) do %>
+            <%= member.last_name %>
+            <%= member.first_name %>
+            <% end %>
+        </td>
+        <td>
+            <%= member.email %>
+        </td>
+        <td>
+            <% if member.withdrawal_status == 1 %>
+            <p>有効</p>
+            <% else %>
+            <p>退会済</p>
+            <% end %>
+        </td>
+    </tr>
+    <% end %>
+    <%= paginate @members %>
+</table>
